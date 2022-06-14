@@ -10,10 +10,9 @@ import SwiftUI
 struct VotePage: View {
     var body: some View {
         ZStack{
-            Color.blue
             
             Image(systemName: "person.fill")
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.blue)
                 .font(.system(size: 100))
         }
     }

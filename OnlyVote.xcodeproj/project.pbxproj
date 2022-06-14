@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07617C8C2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
+		07617C8D2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
+		07617C8E2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
+		07617C8F2858E19200EA3F8F /* Marianne-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C812858E19200EA3F8F /* Marianne-Medium.otf */; };
+		07617C902858E19200EA3F8F /* Marianne-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C812858E19200EA3F8F /* Marianne-Medium.otf */; };
+		07617C912858E19200EA3F8F /* Marianne-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C812858E19200EA3F8F /* Marianne-Medium.otf */; };
+		07617C922858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */; };
+		07617C932858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */; };
+		07617C942858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */; };
+		07617C952858E19300EA3F8F /* Marianne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C832858E19200EA3F8F /* Marianne-Regular.otf */; };
+		07617C962858E19300EA3F8F /* Marianne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C832858E19200EA3F8F /* Marianne-Regular.otf */; };
+		07617C972858E19300EA3F8F /* Marianne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C832858E19200EA3F8F /* Marianne-Regular.otf */; };
+		07617C982858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C842858E19200EA3F8F /* Marianne-MediumItalic.otf */; };
+		07617C992858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C842858E19200EA3F8F /* Marianne-MediumItalic.otf */; };
+		07617C9A2858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C842858E19200EA3F8F /* Marianne-MediumItalic.otf */; };
+		07617C9B2858E19300EA3F8F /* Marianne-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C852858E19200EA3F8F /* Marianne-Light.otf */; };
+		07617C9C2858E19300EA3F8F /* Marianne-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C852858E19200EA3F8F /* Marianne-Light.otf */; };
+		07617C9D2858E19300EA3F8F /* Marianne-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C852858E19200EA3F8F /* Marianne-Light.otf */; };
+		07617C9E2858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C862858E19200EA3F8F /* Marianne-LightItalic.otf */; };
+		07617C9F2858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C862858E19200EA3F8F /* Marianne-LightItalic.otf */; };
+		07617CA02858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C862858E19200EA3F8F /* Marianne-LightItalic.otf */; };
+		07617CA12858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C872858E19200EA3F8F /* Marianne-ExtraBold.otf */; };
+		07617CA22858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C872858E19200EA3F8F /* Marianne-ExtraBold.otf */; };
+		07617CA32858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C872858E19200EA3F8F /* Marianne-ExtraBold.otf */; };
+		07617CA42858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C882858E19200EA3F8F /* Marianne-RegularItalic.otf */; };
+		07617CA52858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C882858E19200EA3F8F /* Marianne-RegularItalic.otf */; };
+		07617CA62858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C882858E19200EA3F8F /* Marianne-RegularItalic.otf */; };
+		07617CA72858E19300EA3F8F /* Marianne-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C892858E19200EA3F8F /* Marianne-Thin.otf */; };
+		07617CA82858E19300EA3F8F /* Marianne-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C892858E19200EA3F8F /* Marianne-Thin.otf */; };
+		07617CA92858E19300EA3F8F /* Marianne-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C892858E19200EA3F8F /* Marianne-Thin.otf */; };
+		07617CAA2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */; };
+		07617CAB2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */; };
+		07617CAC2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */; };
+		07617CAD2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
+		07617CAE2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
+		07617CAF2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
 		07EC61D828587D16007235BD /* OnlyVoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC61D728587D16007235BD /* OnlyVoteApp.swift */; };
 		07EC61DA28587D16007235BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC61D928587D16007235BD /* ContentView.swift */; };
 		07EC61DC28587D18007235BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC61DB28587D18007235BD /* Assets.xcassets */; };
@@ -42,6 +78,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		07617C812858E19200EA3F8F /* Marianne-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Medium.otf"; sourceTree = "<group>"; };
+		07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-BoldItalic.otf"; sourceTree = "<group>"; };
+		07617C832858E19200EA3F8F /* Marianne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Regular.otf"; sourceTree = "<group>"; };
+		07617C842858E19200EA3F8F /* Marianne-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-MediumItalic.otf"; sourceTree = "<group>"; };
+		07617C852858E19200EA3F8F /* Marianne-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Light.otf"; sourceTree = "<group>"; };
+		07617C862858E19200EA3F8F /* Marianne-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-LightItalic.otf"; sourceTree = "<group>"; };
+		07617C872858E19200EA3F8F /* Marianne-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-ExtraBold.otf"; sourceTree = "<group>"; };
+		07617C882858E19200EA3F8F /* Marianne-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-RegularItalic.otf"; sourceTree = "<group>"; };
+		07617C892858E19200EA3F8F /* Marianne-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Thin.otf"; sourceTree = "<group>"; };
+		07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-ThinItalic.otf"; sourceTree = "<group>"; };
+		07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Bold.otf"; sourceTree = "<group>"; };
+		07617CB02858E31B00EA3F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		07EC61D428587D16007235BD /* OnlyVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlyVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC61D728587D16007235BD /* OnlyVoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyVoteApp.swift; sourceTree = "<group>"; };
 		07EC61D928587D16007235BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +136,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07617C7F2858E11900EA3F8F /* ProjectFonts */ = {
+			isa = PBXGroup;
+			children = (
+				07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */,
+				07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */,
+				07617C872858E19200EA3F8F /* Marianne-ExtraBold.otf */,
+				07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */,
+				07617C852858E19200EA3F8F /* Marianne-Light.otf */,
+				07617C862858E19200EA3F8F /* Marianne-LightItalic.otf */,
+				07617C812858E19200EA3F8F /* Marianne-Medium.otf */,
+				07617C842858E19200EA3F8F /* Marianne-MediumItalic.otf */,
+				07617C832858E19200EA3F8F /* Marianne-Regular.otf */,
+				07617C882858E19200EA3F8F /* Marianne-RegularItalic.otf */,
+				07617C892858E19200EA3F8F /* Marianne-Thin.otf */,
+				07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */,
+			);
+			path = ProjectFonts;
+			sourceTree = "<group>";
+		};
 		07EC61CB28587D16007235BD = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +178,8 @@
 		07EC61D628587D16007235BD /* OnlyVote */ = {
 			isa = PBXGroup;
 			children = (
+				07617CB02858E31B00EA3F8F /* Info.plist */,
+				07617C7F2858E11900EA3F8F /* ProjectFonts */,
 				07EC621028587F46007235BD /* Data */,
 				07EC620328587DAE007235BD /* AccountPage */,
 				07EC620228587DA6007235BD /* HomePage */,
@@ -288,7 +358,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				07EC61DF28587D18007235BD /* Preview Assets.xcassets in Resources */,
+				07617CAD2858E19300EA3F8F /* Marianne-Bold.otf in Resources */,
+				07617C9B2858E19300EA3F8F /* Marianne-Light.otf in Resources */,
+				07617C8C2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */,
+				07617CA42858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */,
+				07617C922858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */,
 				07EC61DC28587D18007235BD /* Assets.xcassets in Resources */,
+				07617C8F2858E19200EA3F8F /* Marianne-Medium.otf in Resources */,
+				07617CA72858E19300EA3F8F /* Marianne-Thin.otf in Resources */,
+				07617CA12858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */,
+				07617C9E2858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */,
+				07617CAA2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */,
+				07617C982858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */,
+				07617C952858E19300EA3F8F /* Marianne-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +378,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07617C992858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */,
+				07617CAE2858E19300EA3F8F /* Marianne-Bold.otf in Resources */,
+				07617C8D2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */,
+				07617CA22858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */,
+				07617CAB2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */,
+				07617C962858E19300EA3F8F /* Marianne-Regular.otf in Resources */,
+				07617C932858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */,
+				07617C9F2858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */,
+				07617C902858E19200EA3F8F /* Marianne-Medium.otf in Resources */,
+				07617CA52858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */,
+				07617C9C2858E19300EA3F8F /* Marianne-Light.otf in Resources */,
+				07617CA82858E19300EA3F8F /* Marianne-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +397,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07617C9A2858E19300EA3F8F /* Marianne-MediumItalic.otf in Resources */,
+				07617CAF2858E19300EA3F8F /* Marianne-Bold.otf in Resources */,
+				07617C8E2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */,
+				07617CA32858E19300EA3F8F /* Marianne-ExtraBold.otf in Resources */,
+				07617CAC2858E19300EA3F8F /* Marianne-ThinItalic.otf in Resources */,
+				07617C972858E19300EA3F8F /* Marianne-Regular.otf in Resources */,
+				07617C942858E19200EA3F8F /* Marianne-BoldItalic.otf in Resources */,
+				07617CA02858E19300EA3F8F /* Marianne-LightItalic.otf in Resources */,
+				07617C912858E19200EA3F8F /* Marianne-Medium.otf in Resources */,
+				07617CA62858E19300EA3F8F /* Marianne-RegularItalic.otf in Resources */,
+				07617C9D2858E19300EA3F8F /* Marianne-Light.otf in Resources */,
+				07617CA92858E19300EA3F8F /* Marianne-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +590,7 @@
 				DEVELOPMENT_TEAM = 378K38PGDU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OnlyVote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,6 +620,7 @@
 				DEVELOPMENT_TEAM = 378K38PGDU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OnlyVote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
