@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx'
 import Vote from './Components/Vote/Vote.jsx'
+import Header from "./Components/Header";
 /*
 
 CE FICHIER NE DOIT CONTENIR QUE LES ROUTES DE SITE
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+          <Header/>
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
