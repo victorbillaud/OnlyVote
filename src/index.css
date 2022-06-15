@@ -12,7 +12,9 @@ code {
     monospace;
 }
 
-
+/**
+HEADER
+ **/
 .header {
   box-shadow: 1px 1px 25px black;
 }
@@ -32,9 +34,10 @@ code {
   background-color: #000099;
   color: white;
   font-size: 20px;
-  font-family: Mariane;
+  /*font-family: Mariane;*/
+  vertical-align: auto;
   margin-right: 5%;
-  margin-top : 1%;
+  margin-top : 2%;
   margin-bottom: 6px;
   border : none;
 }

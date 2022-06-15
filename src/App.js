@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx'
 import Vote from './Components/Vote/Vote.jsx'
 import Header from "./Components/Header";
+import Form from "./Components/Form/Form";
 /*
 
 CE FICHIER NE DOIT CONTENIR QUE LES ROUTES DE SITE
@@ -45,6 +46,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
+              <Route path="/form" element={<Form />} />
           </Routes>
       </BrowserRouter>
     </div>
