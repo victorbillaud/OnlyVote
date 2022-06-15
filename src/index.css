@@ -41,3 +41,11 @@ HEADER
   margin-bottom: 6px;
   border : none;
 }
+
+/**
+FOOTER
+ **/
+
+.text_footer{
+  text-align: center;
+}

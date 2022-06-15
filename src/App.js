@@ -4,6 +4,7 @@ import Home from './Components/Home/Home.jsx'
 import Vote from './Components/Vote/Vote.jsx'
 import Header from "./Components/Header";
 import Form from "./Components/Form/Form";
+import Footer from "./Footer";
 /*
 
 CE FICHIER NE DOIT CONTENIR QUE LES ROUTES DE SITE
@@ -49,6 +50,7 @@ function App() {
               <Route path="/form" element={<Form />} />
           </Routes>
       </BrowserRouter>
+        <Footer/>
     </div>
   );
 }
