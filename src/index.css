@@ -58,6 +58,14 @@ HEADER
   margin-top: 9%;
 }
 
+.title{
+  font-size: larger;
+  font-family: var(--font-main);
+  display: block;
+  margin: 3em auto;
+
+}
+
 /**
 FOOTER
  **/
