@@ -1,0 +1,29 @@
+.CardContainer{
+    display : block;
+    width : 25%;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.CardTitle{
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.CardPicture {
+    border-radius: 100px;
+    margin: 2em auto;
+    margin-top: 3em;
+    display: block;
+}
+
+.CardExplain{
+    font-family: var(--font-main);
+    font-size: medium;
+    text-align: justify;
+    width : 80%;
+    margin: 1em auto;
+    margin-bottom: 5em;
+}
