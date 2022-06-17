@@ -5,29 +5,32 @@
     color: white;
     font-size: 20px;
     font-family: var(--font-main);
-    vertical-align: auto;
-    margin-right: 5%;
-    margin-top : 2%;
-    margin-bottom: 6px;
     border : none;
-    text-align: center;
     text-decoration: none;
+    text-align: center;
 }
 
 .form_t{
     text-align: center;
+    max-width: 800px;
 }
 
+.form_1{
+    max-width: 250px;
+    text-align: center;
+}
+.taille{
+    width: 100%;
+    text-align: center;
+}
 input{
-    margin: 5px;
+    margin: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
-.taille_nom_d {
-    /*width: 1500px;*/
+.container_2{
+    max-width: 800px;
+    margin: auto;
 }
 
-.test{
-    width-min: 1500px;
-}

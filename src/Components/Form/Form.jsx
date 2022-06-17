@@ -11,42 +11,45 @@ function Form() {
             <h1 class="title_form" >Veuillez rentrer vos informations pour passer au vote</h1>
 
             <form class="form_t">
-                <div class="taille_nom_d">
-                <label class="test">
+                <div class="form_1">
+                <label>
                     Nom :
-                    <input c type="text" name="Nom" />
+                    <input class="taille"type="text" name="Nom" />
                 </label>
                 <br/>
-                <label class="test">
+                <label class="taille">
                     Prénom :
-                    <input type="text" name="Prénom" />
+                    <input class="taille" type="text" name="Prénom" />
                 </label>
                 <br/>
-                <label class="test">
+                <label class="taille">
                     Date de naissance (JJ/MM/AAAA) :
-                    <input type="date" name="Date" />
+                    <input class="taille" class="test" type="date" name="Date" />
                 </label >
                 <br/>
-                <label class="test">
-                    Département naissance (99 si étranger):
-                    <input type="text" name ="Département" />
-                </label>
-                <br/>
                 <label>
-                    Commune de naissance :
-                    <input type="text" name="Commune"/>
+                    Département naissance (99 si étranger):
+                    <input class="taille" type="text" name ="Département" />
                 </label>
                 <br/>
                 </div>
 
-                <label>
-                    Numéro de sécurité social :
+
+
+                <div class="container_2">
+                <label   >
+                    Commune de naissance
+                    <input type="text" name="Commune"/>
+                </label>
+                <br/>
+                <label >
+                    Numéro de sécurité social
                     <input type="text" name="Numéro sécurité social"/>
                 </label>
                 <br/>
-                <label>
+                <label >
                     Adresse mail :
-                    <input type="email" name="Adresse mail"/>
+                    <input  type="email" name="Adresse mail"/>
                 </label>
                 <br/>
                 <label>
@@ -54,19 +57,24 @@ function Form() {
                     <input type="tel" name="Numéro de téléphone"/>
                 </label>
                 <br/>
+                </div>
+
                 <div>
                 Sexe :
                 <label>
-                    <input type="radio" id="Femme" name="Femme" />
-                        <label for="Femme">Femme</label>
+                    <input type="radio" id="Femme" name="Sexe" />
+                        <label for="Sexe">Femme</label>
                 </label>
                 <label>
-                    <input type="radio" id="Homme" name="Homme"/>
-                    <label for="Homme">Homme</label>
+                    <input type="radio" id="Homme" name="Sexe"/>
+                    <label for="Sexe">Homme</label>
                 </label>
                 </div>
+                    <br/>
+                    <input className="button_form" type="submit" value="Voter"/>
 
-                    <input class="button_form" type="submit" value="Voter" />
+
+
 
                 </form>
         </div>
