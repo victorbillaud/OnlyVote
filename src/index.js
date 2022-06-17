@@ -9,7 +9,8 @@ const app = express();
 
 //define Routes and Express
 const {
-    ROUTE_HOME
+    ROUTE_FORM,
+    ROUTE_VOTE
 } = require("./routes");
 
 // using bodyParser -> Need ??
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // starting the server - WHERE??
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
     console.log('listening on ???');
 });
 
@@ -40,3 +41,23 @@ connection.connect((err) => {
     if (err) throw err;
     console.log('Connected!');
 })
+
+// Fonctions express
+
+function getCandidate(req, res, next) {
+    connection.query("SELECT * FROM Candidate", function(error, results, fields) {
+        if (error) throw error;
+
+        res.json(results);
+        res.end();
+    })
+}
+
+function getVotes(res, res, next) {
+    connection.query("SELECT * FROM Votes", function(error, results, fields) {
+        if (error) throw error;
+
+        res.json(results);
+        res.end();
+    })
+}
