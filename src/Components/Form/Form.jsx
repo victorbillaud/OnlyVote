@@ -66,13 +66,11 @@ function Form() {
                 </label>
                 </div>
 
-
                     <input class="button_form" type="submit" value="Voter" />
 
                 </form>
         </div>
     );
 }
-
 
 export default Form;
