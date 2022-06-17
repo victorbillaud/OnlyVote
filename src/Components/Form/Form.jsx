@@ -4,10 +4,24 @@ import { Link } from 'react-router-dom';
 function Form() {
     return (
         <div>
-            <div class="title">Form page</div>
             <Link to="/">
-                Things
+            Things
             </Link>
+            <h1 class="title_form" >Veuillez rentrer vos informations pour passer au vote</h1>
+
+
+            <form>
+                <label>
+                    Nom :
+                    <input type="text" name="Nom" />
+                </label>
+                <label>
+                    Prénom :
+                    <input type="text" name="Prénom" />
+                </label>
+                <input type="submit" value="Envoyer" />
+            </form>
+
         </div>
     );
 }
