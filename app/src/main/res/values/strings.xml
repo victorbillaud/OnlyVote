@@ -1,5 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">OnlyVote</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
+    <string name="title_vote">Vote</string>
+    <string name="title_candidates">Candidats</string>
+    <string name="title_account">Compte</string>
 </resources>
