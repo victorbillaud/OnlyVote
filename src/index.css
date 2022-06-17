@@ -50,6 +50,12 @@ HEADER
   margin-top : 2%;
   margin-bottom: 6px;
   border : none;
+  text-align: center;
+  text-decoration: none;
+}
+
+#header_voter{
+  margin-top: 9%;
 }
 
 /**

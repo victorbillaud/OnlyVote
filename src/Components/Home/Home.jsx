@@ -5,9 +5,6 @@ function Home() {
     return (
       <div>
         <div class="title">Home Page</div>
-        <Link to="/vote">
-          Things
-        </Link>
       </div>
     );
   }
