@@ -4,4 +4,5 @@
     <string name="title_candidates">Candidats</string>
     <string name="title_account">Compte</string>
     <string name="button_vote">Voter</string>
+    <string name="onlyvote_logo">OnlyVote</string>
 </resources>
