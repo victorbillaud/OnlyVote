@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">OnlyVote</string>
+    <string name="title_vote">Vote</string>
+    <string name="title_candidates">Candidats</string>
+    <string name="title_account">Compte</string>
+    <string name="button_vote">Voter</string>
     <string name="onlyvote_logo">OnlyVote</string>
 </resources>
