@@ -9,12 +9,14 @@
         <entry key="app/src/main/res/drawable/inventory_2_48px.xml" value="0.186" />
         <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_display_message.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.3494791666666667" />
         <entry key="app/src/main/res/layout/top_bar_menu.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.33" />
         <entry key="app/src/main/res/menu/top_bar_menu.xml" value="0.33" />
       </map>
     </option>
