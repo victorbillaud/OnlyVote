@@ -1,6 +1,7 @@
 package com.example.onlyvote
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -30,5 +31,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         navView.setupWithNavController(navController)
+    }
+
+    fun showVoteView(view: View) {
+        binding.navView.selectedItemId = R.id.navigation_home
     }
 }

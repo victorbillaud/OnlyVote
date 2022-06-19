@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:background="@color/white"
         android:clipToPadding="false"
         android:elevation="4dp"
@@ -22,10 +22,12 @@
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:background="@drawable/button"
         android:elevation="6dp"
+        android:onClick="showVoteView"
         android:stateListAnimator="@null"
         android:text="@string/button_vote"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
