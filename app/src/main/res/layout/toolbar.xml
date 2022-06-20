@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:background="?attr/colorOnPrimary"
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorOnPrimary"
         android:clipToPadding="false"
         android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
@@ -22,8 +22,6 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/button"
         android:elevation="6dp"
         android:fontFamily="@font/marianne_medium"

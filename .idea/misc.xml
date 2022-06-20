@@ -20,6 +20,8 @@
         <entry key="app/src/main/res/drawable/icon_selected.xml" value="0.3265" />
         <entry key="app/src/main/res/drawable/inventory_2_48px.xml" value="0.186" />
         <entry key="app/src/main/res/drawable/inventory_selector.xml" value="0.3265" />
+        <entry key="app/src/main/res/drawable/logo_selector.xml" value="0.3265" />
+        <entry key="app/src/main/res/drawable/settings_selector.xml" value="0.3265" />
         <entry key="app/src/main/res/font/font.xml" value="0.3807291666666667" />
         <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_display_message.xml" value="0.33" />
