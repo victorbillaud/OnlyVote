@@ -1,10 +1,12 @@
 .CardContainer{
     display : block;
-    width : 70%;
-    margin: 0 auto;
+    width : 60%;
+    min-width: 50%;
+    margin: 1em auto;
     margin-top: 15%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height : 80%;
+    height : auto;
+    padding: 2em 0;
     overflow: hidden;
 }
 
@@ -24,10 +26,10 @@
 
 .CardExplain{
     font-family: var(--font-main);
-    font-size: small;
+    font-size: medium;
     text-align: justify;
     width : 80%;
-    height: 80%;
+    height: auto;
     margin: 1em auto;
-    margin-bottom: 5em;
+
 }
