@@ -36,7 +36,7 @@ function Home() {
         <HomeCards/>
         <HomeCards/>
 
-    </Carousel>
+    </Carousel >
     )
   }
 
