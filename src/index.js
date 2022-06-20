@@ -10,7 +10,8 @@ const app = express();
 //define Routes and Express
 const {
     ROUTE_FORM,
-    ROUTE_VOTE
+    ROUTE_VOTE,
+    ROUTE_DEPARTMENT
 } = require("./routes");
 
 // using bodyParser -> Need ??
@@ -23,6 +24,8 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send(ads);
 });
+
+app.get(ROUTE_DEPARTMENT, department);
 
 // starting the server - WHERE??
 app.listen(process.env.PORT, () => {
@@ -43,6 +46,15 @@ connection.connect((err) => {
 })
 
 // Fonctions express
+
+function department(request, response, next){
+    connection.query("SELECT DEP, NCC FROM commune2021;", function(error, results, fields) {
+        if (error) throw error;
+
+        response.json(results);
+        response.end();
+    })
+}
 
 function getCandidate(req, res, next) {
     connection.query("SELECT * FROM Candidate", function(error, results, fields) {
