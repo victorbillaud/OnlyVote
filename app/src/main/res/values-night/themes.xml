@@ -2,13 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.OnlyVote" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
+        <!--Classic element color-->
         <item name="colorPrimary">@color/gouv_blue</item>
+        <!--Android bar color-->
         <item name="colorPrimaryVariant">@color/gouv_dark_blue</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <!--Top and bottom bar color-->
+        <item name="colorOnPrimary">@color/dark</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/gouv_blue</item>
+        <!--Icon and text color-->
+        <item name="colorSecondary">@color/white</item>
+        <!--Other color-->
         <item name="colorSecondaryVariant">@color/gouv_blue</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/gouv_blue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
