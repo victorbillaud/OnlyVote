@@ -1,9 +1,11 @@
 .CardContainer{
     display : block;
-    width : 25%;
+    width : 70%;
     margin: 0 auto;
+    margin-top: 15%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height : 50%;
+    height : 80%;
+    overflow: hidden;
 }
 
 .CardTitle{
@@ -15,16 +17,17 @@
 
 .CardPicture {
     border-radius: 100px;
-    margin: 2em auto;
-    margin-top: 3em;
+    margin: 0 auto;
     display: block;
+    padding : 1em;
 }
 
 .CardExplain{
     font-family: var(--font-main);
-    font-size: medium;
+    font-size: small;
     text-align: justify;
     width : 80%;
+    height: 80%;
     margin: 1em auto;
     margin-bottom: 5em;
 }
