@@ -11,7 +11,9 @@ const app = express();
 const {
     ROUTE_FORM,
     ROUTE_VOTE,
-    ROUTE_DEPARTMENT
+    ROUTE_DEPARTMENT,
+    ROUTE_CANDIDAT,
+    ROUTE_RESULTAT
 } = require("./routes");
 
 // ???
@@ -37,7 +39,14 @@ app.get('/', (req, res) => {
     res.send(ads);
 });
 
-app.post(ROUTE_DEPARTMENT, department);
+app.get(ROUTE_DEPARTMENT, department);
+app.get(ROUTE_CANDIDAT, getCandidate);
+app.get(ROUTE_RESULTAT, getVotes)
+
+// starting the server - WHERE??
+app.listen(process.env.PORT, () => {
+    console.log('listening on ???');
+});
 
 // define connection to MySQL database
 const connection = mysql.createConnection({
@@ -84,7 +93,9 @@ function getVotes(res, res, next) {
     })
 }
 
-// starting the server - WHERE??
+// check user data + carte vitale
+
+// code de verification
 app.listen(process.env.PORT, () => {
     console.log('listening on ???');
 });
