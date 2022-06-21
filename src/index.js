@@ -56,7 +56,7 @@ connection.connect((err) => {
 
 function department(req, res){
     console.log(req.body)
-    connection.query("SELECT id, DEP, NCC FROM commune2021 WHERE DEP NOT LIKE 'null' AND DEP = ?;", req.body.department , function(error, results, fields) {
+    connection.query("SELECT id, DEP, NCCENR FROM commune2021 WHERE DEP NOT LIKE 'null' AND DEP = ?;", req.body.department , function(error, results, fields) {
         if (error) throw error;
         //console.log(fields)
         res.json(results);
