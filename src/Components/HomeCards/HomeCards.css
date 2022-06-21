@@ -21,10 +21,15 @@
     border-radius: 100px;
     margin: 0 auto;
     display: block;
-    padding : 1em;
-    overflow: auto;
     width : 100%;
     height: auto;
+}
+
+.PictureContainer{
+    max-width: 150px;
+    max-height: 150px;
+    margin : 0 auto;
+    padding : 0 1em;
 }
 
 .CardExplain{

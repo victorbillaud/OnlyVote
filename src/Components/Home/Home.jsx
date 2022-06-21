@@ -29,15 +29,17 @@ function Home() {
 
     return (
 
-            <Carousel responsive={responsive}>
-                <HomeCards/>
-                <HomeCards/>
-                <HomeCards/>
-                <HomeCards/>
-                <HomeCards/>
-                <HomeCards/>
+            <div class="CarouselContainer">
+                <Carousel responsive={responsive}>
+                    <HomeCards/>
+                    <HomeCards/>
+                    <HomeCards/>
+                    <HomeCards/>
+                    <HomeCards/>
+                    <HomeCards/>
 
-            </Carousel >
+                </Carousel >
+            </div>
     )
   }
 

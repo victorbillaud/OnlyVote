@@ -1,6 +1,10 @@
-.container{
-    display: flex;
+.CarouselContainer{
     width : 90%;
-    margin: 5em auto;
+    margin: 0 auto;
+}
 
+.react-multi-carousel-list {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
