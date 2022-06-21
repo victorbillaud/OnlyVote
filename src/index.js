@@ -39,20 +39,16 @@ app.get('/', (req, res) => {
     res.send(ads);
 });
 
-app.get(ROUTE_DEPARTMENT, department);
+app.post(ROUTE_DEPARTMENT, department);
 app.get(ROUTE_CANDIDAT, getCandidate);
 app.get(ROUTE_RESULTAT, getVotes)
-
-// starting the server - WHERE??
-app.listen(process.env.PORT, () => {
-    console.log('listening on ???');
-});
+app.post(ROUTE_FORM, form)
 
 // define connection to MySQL database
 const connection = mysql.createConnection({
     host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
+    user: process.env.USER ? process.env.USER : "onlyvote" ,
+    password: process.env.PASSWORD ? process.env.PASSWORD : "onlyvote",
     database: process.env.DATABASE
 });
 
@@ -73,6 +69,11 @@ function department(req, res){
         res.end();
     })
     
+}
+
+
+function form(req, res, next) {
+    console.log(req.body)
 }
 
 function getCandidate(req, res, next) {
@@ -97,5 +98,5 @@ function getVotes(res, res, next) {
 
 // code de verification
 app.listen(process.env.PORT, () => {
-    console.log('listening on ???');
+    console.log('listening on',process.env.PORT);
 });
