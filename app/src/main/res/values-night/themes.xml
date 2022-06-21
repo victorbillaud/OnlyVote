@@ -3,15 +3,14 @@
     <style name="Theme.OnlyVote" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <!--Classic element color-->
-        <item name="colorPrimary">@color/gouv_blue</item>
+        <item name="colorPrimary">@color/dark_gouv_blue</item>
         <!--Android bar color-->
-        <item name="colorPrimaryVariant">@color/gouv_dark_blue</item>
+        <item name="colorPrimaryVariant">@color/dark</item>
         <!--Top and bottom bar color-->
         <item name="colorOnPrimary">@color/dark</item>
         <!-- Secondary brand color. -->
-        <!--Icon and text color-->
-        <item name="colorSecondary">@color/white</item>
         <!--Other color-->
+        <item name="colorSecondary">@color/gouv_blue</item>
         <item name="colorSecondaryVariant">@color/gouv_blue</item>
         <item name="colorOnSecondary">@color/gouv_blue</item>
         <!-- Status bar color. -->

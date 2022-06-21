@@ -9,9 +9,8 @@
         <!--Top and bottom bar color-->
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <!--Icon and text color-->
-        <item name="colorSecondary">@color/gouv_blue</item>
         <!--Other color-->
+        <item name="colorSecondary">@color/gouv_blue</item>
         <item name="colorSecondaryVariant">@color/gouv_blue</item>
         <item name="colorOnSecondary">@color/gouv_blue</item>
         <!-- Status bar color. -->

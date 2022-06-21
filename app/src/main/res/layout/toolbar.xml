@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:background="?attr/colorOnPrimary"
         android:clipToPadding="false"
         android:elevation="4dp"
@@ -22,6 +22,8 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/button"
         android:elevation="6dp"
         android:fontFamily="@font/marianne_medium"

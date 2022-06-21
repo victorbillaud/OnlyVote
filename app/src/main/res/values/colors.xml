@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="gouv_blue">#000099</color>
+    <color name="gouv_blue">#000091</color>
     <color name="gouv_dark_blue">#000069</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark">#333333</color>
     <color name="light_dark">#4f4f4f</color>
+    <color name="dark_gouv_blue">#8585f6</color>
 </resources>
