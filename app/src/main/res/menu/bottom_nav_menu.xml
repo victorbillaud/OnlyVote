@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/settings_selector"
+        android:id="@+id/navigation_vote"
+        android:icon="@drawable/inventory_selector"
         android:title="@string/title_vote" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_candidates"
         android:icon="@drawable/account_selector"
         android:title="@string/title_candidates" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/inventory_selector"
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/settings_selector"
         android:title="@string/title_account" />
 
 </menu>

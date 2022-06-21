@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_vote, R.id.navigation_candidates, R.id.navigation_account
             )
         )
 
@@ -34,6 +34,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showVoteView(view: View) {
-        binding.navView.selectedItemId = R.id.navigation_home
+        binding.navView.selectedItemId = R.id.navigation_vote
     }
 }

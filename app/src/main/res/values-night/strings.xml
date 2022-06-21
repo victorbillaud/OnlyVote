@@ -6,4 +6,12 @@
     <string name="title_account">Compte</string>
     <string name="button_vote">Voter</string>
     <string name="onlyvote_logo">OnlyVote</string>
+    <string name="button_male">Homme</string>
+    <string name="button_female">Femme</string>
+    <string name="plaintext_lastname">Nom</string>
+    <string name="plaintext_firstname">Prénom</string>
+    <string name="edittext_email">email@exemple.fr</string>
+    <string name="edittext_phone">0101010101</string>
+    <string name="button_register">S\'enregistrer</string>
+    <string name="button_date">Date de naissance</string>
 </resources>
