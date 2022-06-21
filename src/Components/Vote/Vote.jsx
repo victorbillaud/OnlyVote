@@ -17,9 +17,9 @@ function Vote() {
                 <VoteCards/>
                 <VoteCards/>
                 <VoteCards/>
-                <VoteCards/>
-                <VoteCards/>
             </div>
+
+
 
         </div>
 

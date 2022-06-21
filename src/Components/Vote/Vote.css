@@ -17,11 +17,9 @@
     margin : 5em auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.cardtest{
-    margin : 2em;
-}
 
 .Checkbox{
     margin: 1em auto;
