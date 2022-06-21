@@ -29,6 +29,12 @@ HEADER
 .header {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;}
 
+@media only screen and (max-width: 660px){
+  .header{
+    height: 75px;
+  }
+}
+
 .logo {
   width: 15%;
   height: 15%;
@@ -37,21 +43,47 @@ HEADER
   margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 660px){
+  .logo{
+    width: 20%;
+    height: 20%;
+    margin-left: 5%;
+    margin-top : 20px;
+    margin-bottom: 5px;
+  }
+}
+
 .button_vote {
   float: right;
-  width: 100px;
-  height: 50px;
+  width: 9%;
+  height: 10%;
   background-color: #000099;
   color: white;
-  font-size: 20px;
   font-family: var(--font-main);
-  vertical-align: auto;
+  /*vertical-align: auto;*/
   margin-right: 5%;
   margin-top : 2%;
-  margin-bottom: 6px;
+  margin-bottom: 5%;
   border : none;
   text-align: center;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 660px){
+  .button_vote{
+    float: right;
+    width: 12%;
+    height: 35px;
+    font-size: medium;
+    overflow: hidden;
+    background-color: #000099;
+    color: white;
+    font-family: var(--font-main);
+    border : none;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+  }
 }
 
 #header_voter{
