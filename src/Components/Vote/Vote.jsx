@@ -19,6 +19,16 @@ function Vote() {
                 <VoteCards/>
             </div>
 
+            <div class="buttonContainer">
+
+
+                <Link to="/form" class="ButtonVoteConfirm">
+                    Valider
+                </Link>
+
+            </div>
+
+
 
 
         </div>
