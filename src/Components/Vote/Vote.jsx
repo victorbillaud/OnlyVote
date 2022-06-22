@@ -23,7 +23,7 @@ function Vote() {
 
 
                 <Link to="/form" class="ButtonVoteConfirm">
-                    Valider
+                    Validerc
                 </Link>
 
             </div>
