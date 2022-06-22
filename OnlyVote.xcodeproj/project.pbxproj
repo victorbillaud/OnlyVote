@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0742019E28636A1600B66495 /* OtherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742019D28636A1600B66495 /* OtherClass.swift */; };
 		07617C8C2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
 		07617C8D2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
 		07617C8E2858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */; };
@@ -43,6 +44,8 @@
 		07617CAD2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
 		07617CAE2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
 		07617CAF2858E19300EA3F8F /* Marianne-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */; };
+		07B19D86286079C700E4C291 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B19D85286079C700E4C291 /* Department.swift */; };
+		07B19D8928607AD800E4C291 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B19D8828607AD800E4C291 /* ApiService.swift */; };
 		07EC61D828587D16007235BD /* OnlyVoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC61D728587D16007235BD /* OnlyVoteApp.swift */; };
 		07EC61DA28587D16007235BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC61D928587D16007235BD /* ContentView.swift */; };
 		07EC61DC28587D18007235BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC61DB28587D18007235BD /* Assets.xcassets */; };
@@ -78,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0742019D28636A1600B66495 /* OtherClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherClass.swift; sourceTree = "<group>"; };
 		07617C802858E19200EA3F8F /* Marianne-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		07617C812858E19200EA3F8F /* Marianne-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Medium.otf"; sourceTree = "<group>"; };
 		07617C822858E19200EA3F8F /* Marianne-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		07617C8A2858E19200EA3F8F /* Marianne-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-ThinItalic.otf"; sourceTree = "<group>"; };
 		07617C8B2858E19200EA3F8F /* Marianne-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marianne-Bold.otf"; sourceTree = "<group>"; };
 		07617CB02858E31B00EA3F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		07B19D85286079C700E4C291 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		07B19D8828607AD800E4C291 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		07EC61D428587D16007235BD /* OnlyVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlyVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC61D728587D16007235BD /* OnlyVoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyVoteApp.swift; sourceTree = "<group>"; };
 		07EC61D928587D16007235BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +161,14 @@
 			path = ProjectFonts;
 			sourceTree = "<group>";
 		};
+		07B19D8728607ACC00E4C291 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				07B19D8828607AD800E4C291 /* ApiService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		07EC61CB28587D16007235BD = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +192,7 @@
 		07EC61D628587D16007235BD /* OnlyVote */ = {
 			isa = PBXGroup;
 			children = (
+				07B19D8728607ACC00E4C291 /* Network */,
 				07617CB02858E31B00EA3F8F /* Info.plist */,
 				07617C7F2858E11900EA3F8F /* ProjectFonts */,
 				07EC621028587F46007235BD /* Data */,
@@ -249,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				07EC621528587F85007235BD /* Candidate.swift */,
+				07B19D85286079C700E4C291 /* Department.swift */,
+				0742019D28636A1600B66495 /* OtherClass.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -421,10 +438,13 @@
 			files = (
 				07EC620B28587F10007235BD /* VerificationForm.swift in Sources */,
 				07EC621828588013007235BD /* CandidateCard.swift in Sources */,
+				07B19D8928607AD800E4C291 /* ApiService.swift in Sources */,
 				07EC620528587DC4007235BD /* VotePage.swift in Sources */,
+				0742019E28636A1600B66495 /* OtherClass.swift in Sources */,
 				07EC61DA28587D16007235BD /* ContentView.swift in Sources */,
 				07EC61D828587D16007235BD /* OnlyVoteApp.swift in Sources */,
 				07EC620728587DF3007235BD /* HomePage.swift in Sources */,
+				07B19D86286079C700E4C291 /* Department.swift in Sources */,
 				07EC621A28588029007235BD /* CandidateCardDetails.swift in Sources */,
 				07EC620D28587F1F007235BD /* VoteForm.swift in Sources */,
 				07EC620928587DFE007235BD /* AccountPage.swift in Sources */,

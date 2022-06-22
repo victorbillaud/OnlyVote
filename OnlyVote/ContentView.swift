@@ -29,6 +29,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Candidates", systemImage: "person.crop.circle")
                     }
+                    .offset(y: 30)
                     .tag(2)
                 AccountPage()
                     .tabItem {
@@ -48,7 +49,7 @@ struct ContentView: View {
                         self.tabSelection = 1
                     } label: {
                         Text("Voter")
-                            .padding()
+                            .padding(10)
                             .font(Font.custom("Marianne-Medium", size: 18))
                             .foregroundColor(.white)
                             .background(Color("Bleu France"))
