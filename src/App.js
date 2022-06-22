@@ -11,7 +11,7 @@ CE FICHIER NE DOIT CONTENIR QUE LES ROUTES DE SITE
 
 -> Une route = une navigation, c'est comme si en php tu redirigeais vers une autre page mais ici c'est dynamique
 
-Exemple de App avec des routes : 
+Exemple de App avec des routes :
 
 return (
       <div className="App">
@@ -30,10 +30,10 @@ return (
       </div>
 )
 
-Chaque balises incluent dans l'attribut element de la balise Route (<Home />) sont des composants crées par vous ! 
--> Dans ce cas la c'est une page entiere 
+Chaque balises incluent dans l'attribut element de la balise Route (<Home />) sont des composants crées par vous !
+-> Dans ce cas la c'est une page entiere
 
-Les Balises Header, Footer et Chat sont des balises creés par vous aussi, elles seront accessibles n'importes ou dans le site. 
+Les Balises Header, Footer et Chat sont des balises creés par vous aussi, elles seront accessibles n'importes ou dans le site.
 Cette architecture permet d'avoir un menu de navigation facile et efficace
 
 
@@ -50,6 +50,7 @@ function App() {
               <Route path="/form" element={<Form />} />
           </Routes>
       </BrowserRouter>
+        <Footer />
     </div>
   );
 }

@@ -28,7 +28,6 @@
 
 .ButtonVoteConfirm{
     width: 100px;
-    height: 50px;
     display: block;
     background-color: #000099;
     color: white;
@@ -38,4 +37,7 @@
     text-align: center;
     text-decoration: none;
     margin : 0 auto;
+    padding: 10px;
+    margin-bottom: 2em;
 }
+
