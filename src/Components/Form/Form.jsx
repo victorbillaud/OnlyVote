@@ -23,7 +23,7 @@ function Form() {
 
                 <label>
                     Date de naissance (JJ/MM/AAAA)
-                    <input  type="text" name="Date" />
+                    <input  type="date" name="Date" />
                 </label >
                 <br/>
 

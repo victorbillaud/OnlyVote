@@ -5,7 +5,7 @@ function Header(){
     return (
         <div className="header">
             <header className="App-header">
-                <Link to="/home" class="logo" alt="logo_OnlyVote" >
+                <Link to="/" class="logo" alt="logo_OnlyVote" >
                 <img src={logo_OV} class="logo" alt="logo_OnlyVote" />
                 </Link>
                 <Link to="/vote" class="button_vote">
