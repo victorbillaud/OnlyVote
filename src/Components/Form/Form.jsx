@@ -71,7 +71,6 @@ function Form() {
                         <label  htmlFor="Sexe">Homme</label>
                         <input type="radio" id="Homme" name="Sexe"/>
                     </div>
-
                 </div>
 
                 <Link to="/vote" class="button_form">
