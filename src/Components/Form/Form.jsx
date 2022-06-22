@@ -4,30 +4,26 @@ import './Form.css'
 
 function Form() {
     return (
-        <div>
-            <Link to="/">
-            Things
-            </Link>
+        <div class="container">
+
             <h1 class="title_form" >Veuillez rentrer vos informations pour passer au vote</h1>
 
-
-            <div className="form_1">
-            <form>
+            <form class="form_1">
                 <label>
                     Nom
                     <input type="text" name="Nom" />
                 </label>
                 <br/>
 
-                <label >
+                <label>
                     Prénom
                     <input  type="text" name="Prénom" />
                 </label>
                 <br/>
 
-                <label >
+                <label>
                     Date de naissance (JJ/MM/AAAA)
-                    <input  type="date" name="Date" />
+                    <input  type="text" name="Date" />
                 </label >
                 <br/>
 
@@ -37,20 +33,19 @@ function Form() {
                 </label>
                 <br/>
 
-
-                <label >
+                <label>
                     Commune de naissance
                     <input type="text" name="Commune"/>
                 </label>
                 <br/>
 
-                <label >
+                <label>
                     Numéro de sécurité social
                     <input type="text" name="Numéro sécurité social"/>
                 </label>
                 <br/>
 
-                <label >
+                <label>
                     Adresse mail
                     <input type="email" name="Adresse mail"/>
                 </label>
@@ -62,20 +57,28 @@ function Form() {
                 </label>
                 <br/>
 
-                <label>
-                    Sexe :
-                    <br/>
-                    <input type="radio" id="Femme" name="Sexe" />
-                        <label for="Sexe">Femme</label>
-                </label>
-                <label>
-                    <input type="radio" id="Homme" name="Sexe"/>
-                    <label for="Sexe">Homme</label>
-                    <br/>
+                Sexe :
+                <br/>
 
-                </label>
+                <div class="sexe_container">
+
+                    <div class="s_choice">
+                        <label htmlFor="Sexe">Femme</label>
+                        <input type="radio" id="Femme" name="Sexe"/>
+                    </div>
+
+                    <div class="s_choice">
+                        <label  htmlFor="Sexe">Homme</label>
+                        <input type="radio" id="Homme" name="Sexe"/>
+                    </div>
+
+                </div>
+
+                <Link to="/vote" class="button_form">
+                    Voter
+                </Link>
                 </form>
-            </div>
+
         </div>
     );
 }

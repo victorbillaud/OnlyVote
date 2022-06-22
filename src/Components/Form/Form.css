@@ -1,35 +1,82 @@
-h1{
+.container{
+    width: 70%;
     text-align: center;
+    margin: 0 auto;
+    font-family: var(--font-main);
+}
+
+.title_form{
+    text-align: center;
+    width: 100%;
 }
 
 .button_form{
     width: 100px;
-    height: 50px;
+    display: block;
     background-color: #000099;
     color: white;
     font-size: 20px;
     font-family: var(--font-main);
     border : none;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
+    margin : 2em auto;
+    padding: 10px;
 }
 
 .form_1{
     vertical-align: center;
     margin: 0 auto;
-}
-
-input{
-    margin: 10px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
-}
-
-label{
-    float: left;
     text-align: center;
-    width: 1400px;
-    padding:10px;
 }
 
+form {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 30px 50px;
+}
+
+input {
+    margin: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
+label {
+    color: #3d3d3d;
+    display: block;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.sexe_container{
+    max-width: 500px;
+    display: flex;
+    margin : 1em auto;
+}
+
+.s_choice{
+    max-width: 500px;
+    display: flex;
+    margin : 0 3em;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 660px){
+    .s_choice{
+        margin : 0;
+    }
+}
 
