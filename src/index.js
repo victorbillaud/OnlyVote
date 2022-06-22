@@ -2,14 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 
 // defining the Express app
 const app = express();
 
 //define Routes and Express
 const {
-    ROUTE_FORM,
+    ROUTE_REGISTER,
     ROUTE_VOTE,
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 app.post(ROUTE_DEPARTMENT, department);
 app.get(ROUTE_CANDIDAT, getCandidate);
 app.get(ROUTE_RESULTAT, getVotes)
-app.post(ROUTE_FORM, form)
+app.post(ROUTE_REGISTER, form)
 
 // define connection to MySQL database
 const connection = mysql.createConnection({
@@ -60,12 +60,12 @@ connection.connect((err) => {
 // Fonctions express
 
 function department(req, res){
-    console.log(req.body)
+    //console.log(req.body)
     connection.query("SELECT id, DEP, NCCENR FROM commune2021 WHERE DEP NOT LIKE 'null' AND DEP = ?;", req.body.department , function(error, results, fields) {
         if (error) throw error;
         //console.log(fields)
         res.json(results);
-        console.log(JSON.stringify(results))
+        //console.log(JSON.stringify(results))
         res.end();
     })
     
@@ -74,6 +74,9 @@ function department(req, res){
 
 function form(req, res, next) {
     console.log(req.body)
+    res.json({
+        "response": "uses registered"
+    })
 }
 
 function getCandidate(req, res, next) {

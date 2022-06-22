@@ -1,5 +1,5 @@
 const
-    ROUTE_FORM = '/form'
+    ROUTE_REGISTER = '/register'
     ROUTE_VOTE = '/vote'
     ROUTE_DEPARTMENT = '/department'
     ROUTE_CANDIDAT = '/candidat'
@@ -7,7 +7,7 @@ const
     ;
 
 module.exports = {
-    ROUTE_FORM,
+    ROUTE_REGISTER,
     ROUTE_VOTE,
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
