@@ -12,5 +12,6 @@
     <string name="edittext_email">email@exemple.fr</string>
     <string name="edittext_phone">0101010101</string>
     <string name="button_register">S\'enregistrer</string>
-    <string name="button_date">Date de naissance</string>
+    <string name="button_date">01-01-1901</string>
+    <string name="plaintext_date">Date de naissance :</string>
 </resources>

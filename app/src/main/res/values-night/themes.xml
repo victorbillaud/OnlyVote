@@ -10,9 +10,9 @@
         <item name="colorOnPrimary">@color/dark</item>
         <!-- Secondary brand color. -->
         <!--Other color-->
-        <item name="colorSecondary">@color/gouv_blue</item>
-        <item name="colorSecondaryVariant">@color/gouv_blue</item>
-        <item name="colorOnSecondary">@color/gouv_blue</item>
+        <item name="colorSecondary">@color/dark_gouv_blue</item>
+        <item name="colorSecondaryVariant">@color/dark_gouv_blue</item>
+        <item name="colorOnSecondary">@color/dark_gouv_blue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

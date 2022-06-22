@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.onlyvote.databinding.FragmentAccountBinding
 
 class AccountFragment : Fragment() {
@@ -21,16 +20,27 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val accountViewModel =
-            ViewModelProvider(this).get(AccountViewModel::class.java)
-
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        /* val textView: TextView = binding.textNotifications
-        accountViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        } */
+        binding.apply {
+            buttonDate.setOnClickListener {
+                val datePickerFragment = DatePickerFragment()
+                val supportFragmentManager = requireActivity().supportFragmentManager
+
+                supportFragmentManager.setFragmentResultListener(
+                    "REQUEST_KEY",
+                    viewLifecycleOwner
+                ) { resultKey, bundle ->
+                    if (resultKey == "REQUEST_KEY") {
+                        val date = bundle.getString("SELECTED_DATE")
+                        buttonDate.text = date
+                    }
+                }
+
+                datePickerFragment.show(supportFragmentManager, "DatePickerFragment")
+             }
+        }
 
         return root
     }
