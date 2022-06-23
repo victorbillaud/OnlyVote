@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import './Form.css'
 
-
 function Form() {
     return (
         <div class="container">
 
             <h1 class="title_form" >Veuillez rentrer vos informations pour passer au vote</h1>
+
+            <Link to="/registred">
+            <p class="already">J'ai déjà rempli le formulaire</p>
+            </Link>
 
             <form class="form_1">
                 <label>

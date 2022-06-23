@@ -5,6 +5,8 @@ import Vote from './Components/Vote/Vote.jsx'
 import Header from "./Components/Header";
 import Form from "./Components/Form/Form";
 import Footer from "./Footer";
+import Registred from "./Components/Registred"
+
 /*
 
 CE FICHIER NE DOIT CONTENIR QUE LES ROUTES DE SITE
@@ -48,6 +50,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
               <Route path="/form" element={<Form />} />
+              <Route path="/Registred" element={<Registred />} />
           </Routes>
       </BrowserRouter>
         <Footer />

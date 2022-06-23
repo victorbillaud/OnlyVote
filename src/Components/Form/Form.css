@@ -24,6 +24,14 @@
     padding: 10px;
 }
 
+.already{
+    text-align: center;
+    width: 100%;
+    color: #000099;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
 .form_1{
     vertical-align: center;
     margin: 0 auto;
