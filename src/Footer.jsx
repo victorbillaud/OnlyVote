@@ -2,7 +2,7 @@ function Footer(){
     return (
         <div>
             <footer className="App-header">
-                <p class="text_footer">Tous droits réservés</p>
+                <p class="text_footer">© Copyright 2022</p>
             </footer>
         </div>
     );

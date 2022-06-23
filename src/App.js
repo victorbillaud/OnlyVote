@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx'
 import Vote from './Components/Vote/Vote.jsx'
 import Header from "./Components/Header";
+import Registred from "./Components/Registred/Registred";
 import Form from "./Components/Form/Form";
 import Footer from "./Footer";
-import Registred from "./Components/Registred"
+
 
 /*
 
