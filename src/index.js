@@ -75,7 +75,7 @@ function department(req, res){
 function form(req, res, next) {
     console.log(req.body)
     res.json({
-        "response": "uses registered"
+        "response": "user registered"
     })
 }
 
@@ -98,6 +98,48 @@ function getVotes(res, res, next) {
 }
 
 // check user data + carte vitale
+function checkUserData(req, res, next){
+    
+    const userValues = [
+        req.body.socialNumber,
+        req.body.birthDate,
+        req.body.gender,
+        req.body.birthDepartment,
+        req.body.birthTown,
+        req.body.phoneNumber,
+        req.body.email,
+        req.body.firstname,
+        req.body.lastname,
+    ]
+
+    numSexe = userValues[0].slice(0, 1);
+    numAnnee = userValues[0].slice(1,3);
+    numMois = userValues[0].slice(3, 5);
+    numINSEE = userValues[0].slice(5, 9);
+    cle = userValues[0].slice(13, 15);
+    nir = userValues[0].slice(0, 13);
+
+    if (userValues[2] == 'homme'){
+        sexe = 1;
+    } else {
+        sexe = 2;
+    }
+
+    // age
+    // annee
+    // mois
+
+    if ((cle != (97 - nir % 97)) || (sexe != numSexe) || (age < 18) || (annee != numAnnee) || (mois != numMois) || (userValues[4] != numINSEE)){
+        // faux
+    }
+	
+	connection.query("INSERT INTO Users ( `num_secu`,`dateOfBirth`,`gender`, `stateOfBirth`, `townOfBirth`, `phoneNumber`, `email` , `firstname`, `latname`) VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? );", userValues, function (error, results, fields) {
+        // If there is an issue with the query, output the error
+        if (error) throw error;
+        res.end();
+    })
+	  
+}
 
 // code de verification
 app.listen(process.env.PORT, () => {
