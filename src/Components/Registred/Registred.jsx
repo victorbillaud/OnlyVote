@@ -18,7 +18,7 @@ function Registred(){
 
             <label>
                 Saisir le code
-                <input class="input_r" type="text" maxlength="8" name="Code de Vérification"/>
+                <input class="input_r" type="text" maxlength="6" name="Code de Vérification"/>
             </label>
 
             <Link to="/" class="button_validation">
