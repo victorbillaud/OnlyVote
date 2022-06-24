@@ -4,6 +4,7 @@ const
     ROUTE_DEPARTMENT = '/department'
     ROUTE_CANDIDAT = '/candidat'
     ROUTE_RESULTAT = '/resultat'
+    ROUTE_GET_INSEE = '/insee'
     ;
 
 module.exports = {
@@ -11,5 +12,6 @@ module.exports = {
     ROUTE_VOTE,
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
-    ROUTE_RESULTAT
+    ROUTE_RESULTAT,
+    ROUTE_GET_INSEE
 }

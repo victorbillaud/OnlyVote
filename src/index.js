@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
+const axios  = require('axios');
 require('dotenv').config({path:'../.env'});
 
 // defining the Express app
@@ -13,7 +14,8 @@ const {
     ROUTE_VOTE,
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
-    ROUTE_RESULTAT
+    ROUTE_RESULTAT,
+    ROUTE_GET_INSEE
 } = require("./routes");
 
 // ???
@@ -52,7 +54,8 @@ app.get('/', (req, res) => {
 app.post(ROUTE_DEPARTMENT, department);
 app.get(ROUTE_CANDIDAT, getCandidate);
 app.get(ROUTE_RESULTAT, getVotes)
-app.post(ROUTE_REGISTER, form)
+app.post(ROUTE_REGISTER, register)
+app.post(ROUTE_GET_INSEE, getInseeCode)
 
 // define connection to MySQL database
 const connection = mysql.createConnection({
@@ -108,47 +111,90 @@ function getVotes(res, res, next) {
 }
 
 // check user data + carte vitale
-function checkUserData(req, res, next){
-    
-    const userValues = [
-        req.body.socialNumber,
-        req.body.birthDate,
-        req.body.gender,
-        req.body.birthDepartment,
-        req.body.birthTown,
-        req.body.phoneNumber,
-        req.body.email,
-        req.body.firstname,
-        req.body.lastname,
-    ]
+function register(req, res, next){
 
-    numSexe = userValues[0].slice(0, 1);
-    numAnnee = userValues[0].slice(1,3);
-    numMois = userValues[0].slice(3, 5);
-    numINSEE = userValues[0].slice(5, 9);
-    cle = userValues[0].slice(13, 15);
-    nir = userValues[0].slice(0, 13);
+    const userData = req.body;
+    const socialNumber = userData.socialNumber;
 
-    if (userValues[2] == 'homme'){
-        sexe = 1;
-    } else {
-        sexe = 2;
+    numSexe = socialNumber.slice(0, 1);
+    numAnnee = socialNumber.slice(1,3);
+    numMois = socialNumber.slice(3, 5);
+    numINSEE = socialNumber.slice(5, 10);
+    cle = socialNumber.slice(13, 15);
+    nir = socialNumber.slice(0, 13);
+
+    if(cle == (97 - nir % 97)){
+        verifInseeCode().then(result => {
+            if(result.data.COM && result.data.COM.toString() == numINSEE){
+                if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) &&vverifBirthAge(userData.birthDate)){
+
+                    // CHECK USER OK
+                    // ENREGISTREMENT DANS LA DB
+                
+                    res.send(true)
+                } else res.send(false)
+            } else res.send(false)
+        })
+    }else{
+        res.send(false)
     }
 
-    // age
-    // annee
-    // mois
+    // verificaton du genre
+    function verifGender(){
+        return sexe = userData.gender == 'homme' ? 1 : 2; 
+    }
 
-    if ((cle != (97 - nir % 97)) || (sexe != numSexe) || (age < 18) || (annee != numAnnee) || (mois != numMois) || (userValues[4] != numINSEE)){
-        // faux
+    // verification de la date de naissance
+    function verifBirthDate(){
+        var date = new Date(userData.birthDate * 1000);
+        // Hours part from the timestamp
+        const year = Number(date.getFullYear().toString().slice(-2));
+        const month = date.getMonth();
+
+        if(year == numAnnee && month + 1 == numMois){
+            return true;
+        }
+        return false;
+    }
+
+    // verification de l'age
+    function verifBirthAge(){
+        var date = new Date(userData.birthDate * 1000);
+        return (new Date(new Date() - date).getYear() - 70) >= 18 ? true : false;
+    }
+
+    // verification du code insee de la commune
+    function verifInseeCode(){
+        var INSEE = null;
+        const response = getInsee({
+            com : userData.birthTown,
+            dep : userData.birthDepartment
+        });
+
+        return response
+
+        function getInsee(data) {
+            return axios.post('https://onlyvote.victorbillaud.fr/insee', {
+                data
+            })
+        }
     }
 	
-	connection.query("INSERT INTO Users ( `num_secu`,`dateOfBirth`,`gender`, `stateOfBirth`, `townOfBirth`, `phoneNumber`, `email` , `firstname`, `latname`) VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? );", userValues, function (error, results, fields) {
-        // If there is an issue with the query, output the error
-        if (error) throw error;
-        res.end();
-    })
+	// connection.query("INSERT INTO Users ( `num_secu`,`dateOfBirth`,`gender`, `stateOfBirth`, `townOfBirth`, `phoneNumber`, `email` , `firstname`, `latname`) VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? );", userValues, function (error, results, fields) {
+    //     // If there is an issue with the query, output the error
+    //     if (error) throw error;
+    //     res.end();
+    // })
 	  
+}
+
+function getInseeCode(req, res){
+    connection.query("SELECT COM FROM commune2021 WHERE NCCENR LIKE ? AND DEP = ? ;", [req.body.data.com,  req.body.data.dep] , function(error, results, fields) {
+        if (error) throw error;
+        if (results.length > 0) {
+            res.json(results[0])
+        }else res.send(false);
+    })
 }
 
 // code de verification
