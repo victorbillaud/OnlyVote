@@ -6,6 +6,10 @@ import Header from "./Components/Header";
 import Registred from "./Components/Registred/Registred";
 import Form from "./Components/Form/Form";
 import Footer from "./Footer";
+import Header_v from "./Components/Header_v";
+import { useLocation } from "react-router-dom"
+import {Component} from "react";
+import Compare_header from "./Compare_header";
 
 
 /*
@@ -39,14 +43,17 @@ Chaque balises incluent dans l'attribut element de la balise Route (<Home />) so
 Les Balises Header, Footer et Chat sont des balises creés par vous aussi, elles seront accessibles n'importes ou dans le site.
 Cette architecture permet d'avoir un menu de navigation facile et efficace
 
-
+          const sampleLocation = useLocation();
+          <Route path="/" component={App}></Route>
 */
 
-function App() {
+function App(){
   return (
     <div className="App">
       <BrowserRouter>
-         <Header />
+
+        <Compare_header />
+
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
@@ -57,6 +64,20 @@ function App() {
         <Footer />
     </div>
   );
+}
+
+function App_Form(){
+    return(
+        <div className="App">
+            <BrowserRouter>
+            <Header_v />
+                <Routes>
+                    <Route path="/form" element={<Form />} />
+                </Routes>
+            </BrowserRouter>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

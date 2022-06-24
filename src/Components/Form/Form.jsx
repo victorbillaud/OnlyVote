@@ -3,6 +3,7 @@ import './Form.css'
 
 function Form() {
     return (
+
         <div class="container">
 
             <h1 class="title_form" >Veuillez rentrer vos informations pour passer au vote</h1>
