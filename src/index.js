@@ -26,13 +26,23 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-// app.use(express.json());
-// app.use(cors())
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+/*
+    SMS
+*/
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+// client.messages
+//   .create({
+//      body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+//      from: '+13512229611',
+//      to: '+33782063054'
+//    })
+//   .then(message => console.log(message.sid));
+
+
 
 // defining an endpoint to return all ads
 app.get('/', (req, res) => {
