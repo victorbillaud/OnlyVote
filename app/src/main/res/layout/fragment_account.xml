@@ -6,16 +6,207 @@
     android:layout_height="match_parent"
     tools:context=".ui.account.AccountFragment">
 
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="?attr/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/marianne_medium"
+        android:hint="@string/edittext_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="?attr/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/marianne_medium"
+        android:hint="@string/edittext_phone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_secondary"
+        android:fontFamily="@font/marianne_medium"
+        android:padding="4dp"
+        android:text="@string/button_date"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_date"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/plaintext_date"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toStartOf="@+id/button_date"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="?attr/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/marianne_medium"
+        android:hint="@string/plaintext_socialNumber"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/button_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button"
+        android:text="@string/button_register"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/app_name"
+        android:entries="@android:array/phoneTypes"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/spinner3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/button_date"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/textview_cityOfBirth"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/spinner3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/app_name"
+        android:entries="@android:array/phoneTypes"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/textview_dptOfBirth"
+        app:layout_constraintBottom_toTopOf="@+id/spinner3"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_date" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:backgroundTint="?attr/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/marianne_medium"
+        android:hint="@string/plaintext_lastname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/button_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_gender" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:autofillHints=""
+        android:backgroundTint="?attr/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/marianne_medium"
+        android:hint="@string/plaintext_firstname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/button_date"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_gender" />
+
     <RadioGroup
         android:id="@+id/radioGroup_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_date"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton_male"
@@ -36,125 +227,5 @@
             android:fontFamily="@font/marianne_medium"
             android:text="@string/button_female" />
     </RadioGroup>
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="8dp"
-        android:autofillHints=""
-        android:backgroundTint="?attr/colorPrimary"
-        android:ems="10"
-        android:fontFamily="@font/marianne_medium"
-        android:hint="@string/plaintext_lastname"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup_gender"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="24dp"
-        android:autofillHints=""
-        android:backgroundTint="?attr/colorPrimary"
-        android:ems="10"
-        android:fontFamily="@font/marianne_medium"
-        android:hint="@string/plaintext_firstname"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup_gender"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:autofillHints=""
-        android:backgroundTint="?attr/colorPrimary"
-        android:ems="10"
-        android:fontFamily="@font/marianne_medium"
-        android:hint="@string/edittext_email"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_date" />
-
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:backgroundTint="?attr/colorPrimary"
-        android:ems="10"
-        android:fontFamily="@font/marianne_medium"
-        android:hint="@string/edittext_phone"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/button_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
-
-    <Button
-        android:id="@+id/button_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:background="@drawable/button"
-        android:text="@string/button_register"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:background="@drawable/button_secondary"
-        android:fontFamily="@font/marianne_medium"
-        android:padding="4dp"
-        android:text="@string/button_date"
-        android:textColor="?attr/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView_date"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup_gender" />
-
-    <TextView
-        android:id="@+id/textView_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="41dp"
-        android:text="@string/plaintext_date"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintEnd_toStartOf="@+id/button_date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup_gender" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

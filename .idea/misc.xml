@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/drawable/button.xml" value="0.3825" />
         <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/activity_main.xml" value="0.38333333333333336" />
-        <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_account.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_account.xml" value="0.33" />
+        <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_candidates.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_dashboard.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_home.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/pguer/Documents/VSCODEPROJECTS/onlyvote/app/src/main/res/layout/fragment_notifications.xml" value="0.38333333333333336" />

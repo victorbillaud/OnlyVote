@@ -10,9 +10,12 @@
     <string name="button_female">Femme</string>
     <string name="plaintext_lastname">Nom</string>
     <string name="plaintext_firstname">Prénom</string>
-    <string name="edittext_email">email@exemple.fr</string>
-    <string name="edittext_phone">0101010101</string>
+    <string name="edittext_email">Adresse mail</string>
+    <string name="edittext_phone">Numéro de téléphone</string>
     <string name="button_register">S\'enregistrer</string>
     <string name="button_date">01-01-1901</string>
     <string name="plaintext_date">Date de naissance :</string>
+    <string name="plaintext_socialNumber">Numéro de sécurité social</string>
+    <string name="textview_dptOfBirth">Département de naissance :</string>
+    <string name="textview_cityOfBirth">Ville de naissance :</string>
 </resources>
