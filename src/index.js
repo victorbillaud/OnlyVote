@@ -133,11 +133,19 @@ function register(req, res, next){
                 if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) && verifBirthAge(userData.birthDate)){
 
                     // CHECK USER OK
-                    // ENREGISTREMENT DANS LA DB
-                
-                    res.send({result: true, message: "Social card number valid"})
-                } else res.send({result: false, message: "Social card number invalid"})
-            } else res.send({result: false, message: "Social card number invalid"})
+                    // ENREGISTREMENT DANS LA DB OK
+
+                    connection.query("INSERT INTO USERS (num_secu, dateOfBirth, gender, stateOfBirth, townOfBirth, phoneNumber, email, firstname, lastname) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", 
+                        [userData.socialNumber, userData.birthDate, userData.gender, userData.birthDepartment, userData.birthTown, userData.phoneNumber, userData.email, userData.firstname, userData.lastname], 
+                        function(error, results, fields) {
+                            if (error) throw error;
+                            res.end();
+                        }
+                    )
+
+                    res.send(true)
+                } else res.send(false)
+            } else res.send(false)
         })
     }else{
         res.send({result: false, message: "Social card number invalid"})
@@ -183,12 +191,6 @@ function register(req, res, next){
             })
         }
     }
-	
-	// connection.query("INSERT INTO Users ( `num_secu`,`dateOfBirth`,`gender`, `stateOfBirth`, `townOfBirth`, `phoneNumber`, `email` , `firstname`, `latname`) VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? );", userValues, function (error, results, fields) {
-    //     // If there is an issue with the query, output the error
-    //     if (error) throw error;
-    //     res.end();
-    // })
 	  
 }
 
