@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-         <Header />
+         <Header/>
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
