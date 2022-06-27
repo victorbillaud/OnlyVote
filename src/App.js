@@ -66,18 +66,4 @@ function App(){
   );
 }
 
-function App_Form(){
-    return(
-        <div className="App">
-            <BrowserRouter>
-            <Header_v />
-                <Routes>
-                    <Route path="/form" element={<Form />} />
-                </Routes>
-            </BrowserRouter>
-            <Footer />
-        </div>
-    );
-}
-
 export default App;
