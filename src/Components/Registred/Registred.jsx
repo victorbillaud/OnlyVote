@@ -5,7 +5,6 @@ function Registred(){
     return(
         <div class="container">
         <h1 class="title_registred">Veuillez rentrer vos informations pour passer au vote</h1>
-
             <label>
                 Numéro de téléphone
                 <input class="input_r" type="tel" name="Numéro de téléphone"/>
