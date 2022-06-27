@@ -3,7 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 const axios  = require('axios');
-require('dotenv').config({path:'../.env'});
+const moment = require('moment')
+
+require('dotenv').config();
+//{path:'../.env'}
 
 // defining the Express app
 const app = express();
@@ -134,18 +137,19 @@ function register(req, res, next){
 
                     // CHECK USER OK
                     // ENREGISTREMENT DANS LA DB OK
-
-                    connection.query("INSERT INTO USERS (num_secu, dateOfBirth, gender, stateOfBirth, townOfBirth, phoneNumber, email, firstname, lastname) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", 
-                        [userData.socialNumber, userData.birthDate, userData.gender, userData.birthDepartment, userData.birthTown, userData.phoneNumber, userData.email, userData.firstname, userData.lastname], 
+                    console.log( userData.birthDate)
+                    connection.query("INSERT INTO Users (num_secu, dateOfBirth, gender, stateOfBirth, townOfBirth, phoneNumber, email, firstname, lastname) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", 
+                        [userData.socialNumber, convertDateFormat(), userData.gender, userData.birthDepartment, userData.birthTown, userData.phoneNumber, userData.email, userData.firstname, userData.lastname], 
                         function(error, results, fields) {
+                            console.log(results)
                             if (error) throw error;
-                            res.end();
                         }
                     )
 
-                    res.send(true)
-                } else res.send(false)
-            } else res.send(false)
+
+                    res.send({result: true, message: "User Registred"})
+                } else res.send({result: false, message: "Info Invalid"})
+            } else res.send({result: false, message: "Numero INSEE invalid"})
         })
     }else{
         res.send({result: false, message: "Social card number invalid"})
@@ -167,6 +171,11 @@ function register(req, res, next){
             return true;
         }
         return false;
+    }
+
+    function convertDateFormat(){
+        const date = new Date(userData.birthDate * 1000).toISOString().slice(0, 19).replace('T', ' ');;
+        return date
     }
 
     // verification de l'age
