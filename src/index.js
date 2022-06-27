@@ -113,6 +113,10 @@ function getVotes(res, res, next) {
 // check user data + carte vitale
 function register(req, res, next){
 
+    // IL FAUT RESPECTER LE MODELE DE REPONSE
+
+    // {result: Bool, message: String}
+
     const userData = req.body;
     const socialNumber = userData.socialNumber;
 
@@ -126,17 +130,17 @@ function register(req, res, next){
     if(cle == (97 - nir % 97)){
         verifInseeCode().then(result => {
             if(result.data.COM && result.data.COM.toString() == numINSEE){
-                if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) &&vverifBirthAge(userData.birthDate)){
+                if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) && verifBirthAge(userData.birthDate)){
 
                     // CHECK USER OK
                     // ENREGISTREMENT DANS LA DB
                 
-                    res.send(true)
-                } else res.send(false)
-            } else res.send(false)
+                    res.send({result: true, message: "Social card number valid"})
+                } else res.send({result: false, message: "Social card number invalid"})
+            } else res.send({result: false, message: "Social card number invalid"})
         })
     }else{
-        res.send(false)
+        res.send({result: false, message: "Social card number invalid"})
     }
 
     // verificaton du genre
