@@ -2,6 +2,8 @@ import './Vote.css'
 import VoteCards from "../VoteCards/VoteCards";
 import PopUpVote from "../PopUpVote/PopUpVote"
 
+
+
 function Vote() {
     return (
         <div class="VotePage">

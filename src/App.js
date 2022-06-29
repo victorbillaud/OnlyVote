@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import Registred from "./Components/Registred/Registred";
 import Form from "./Components/Form/Form";
 import Footer from "./Footer";
+import Header_v from "./Components/Header_v";
 
 
 /*
@@ -46,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-         <Header/>
+          <Header />
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
