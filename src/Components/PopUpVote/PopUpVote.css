@@ -1,7 +1,7 @@
 .modal{
     position: sticky;
-    width: 50vw;
-    margin : 10% auto;
+    width: 38vw;
+    margin : 10vw auto;
     padding : 1em;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
