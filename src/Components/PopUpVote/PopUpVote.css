@@ -1,0 +1,109 @@
+.modal{
+    position: sticky;
+    width: 50vw;
+    margin : 10% auto;
+    padding : 1em;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ButtonVoteConfirm{
+    width: 100px;
+    display: block;
+    background-color: #000099;
+    color: white;
+    font-size: 20px;
+    font-family: var(--font-main);
+    border : none;
+    text-align: center;
+    text-decoration: none;
+    margin : 0 auto;
+    padding: 10px;
+    margin-bottom: 2em;
+}
+
+.ButtonVoteConfirm:hover{
+    cursor: pointer;
+}
+
+.ButtonVoteValider{
+    width: 100px;
+    display: block;
+    background-color: #000099;
+    color: white;
+    font-size: 20px;
+    font-family: var(--font-main);
+    border : none;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 1em;
+}
+
+.ButtonVoteValider:hover{
+    cursor: pointer;
+}
+
+.ButtonVoteValider:disabled{
+    background-color: #ccc;
+}
+
+.ButtonVoteValider:disabled:hover{
+    cursor: auto;
+}
+
+.ButtonChanger{
+    width: 100px;
+    display: block;
+    background-color: white;
+    color: #000099;
+    font-size: 20px;
+    font-family: var(--font-main);
+    border : #000099 1px solid;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 1em;
+}
+
+.ButtonChanger:hover{
+    cursor: pointer;
+}
+
+.LogoPopup{
+    max-width: 200px;
+    margin : 1em;
+}
+
+.TitrePopup{
+    margin : 1em auto;
+    font-size: larger;
+    font-family: var(--font-main);
+    font-weight: bold;
+    text-align: center;
+}
+
+.formpopup{
+    vertical-align: center;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+.intro{
+    width: 100%;
+}
+
+.formpopup input{
+    margin:10px auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 28vw;
+}

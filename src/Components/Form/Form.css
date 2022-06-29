@@ -48,7 +48,7 @@ form {
     padding: 30px 50px;
 }
 
-input {
+.form_1 input {
     margin: 10px;
     border: 1px solid #d9d9d9;
     border-radius: 4px;
