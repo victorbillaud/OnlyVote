@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const axios  = require('axios');
 const moment = require('moment')
 
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 //{path:'../.env'}
 
 // defining the Express app
@@ -19,6 +19,8 @@ const {
     ROUTE_CANDIDAT,
     ROUTE_RESULTAT,
     ROUTE_GET_INSEE,
+    ROUTE_CODE,
+    ROUTE_CHECK
 } = require("./routes");
 
 app.use(express.urlencoded({ extended: false }));
@@ -30,22 +32,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-/*
-    SMS
-
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
-*/
-
-// client.messages
-//   .create({
-//      body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
-//      from: '+13512229611',
-//      to: '+33782063054'
-//    })
-//   .then(message => console.log(message.sid));
 
 
 
@@ -60,6 +50,8 @@ app.get(ROUTE_RESULTAT, getResults);
 app.post(ROUTE_REGISTER, verifUserinDB, register);
 app.post(ROUTE_GET_INSEE, getInseeCode);
 app.post(ROUTE_VOTE, submitVote);
+app.get(ROUTE_CODE, submitCode);
+app.get(ROUTE_CHECK, checkCode);
 
 
 // define connection to MySQL database
@@ -76,6 +68,37 @@ connection.connect((err) => {
 })
 
 // Fonctions express
+
+function submitCode(req,res){
+    console.log(req.headers)
+    const phone = '+33' + req.headers.phone.substr(1)
+    client.verify.services('VAa197e2db245596ea137271f896e893aa')
+             .verifications
+             .create({to: phone, channel: 'sms'})
+             .then(verification => {
+                console.log(verification.sid)
+                res.json({result: true, message: "Message sended"})
+             });
+}
+
+function checkCode(req,res){
+    console.log(req.headers)
+    const phone = '+33' + req.headers.phone.substr(1)
+    client.verify.services('VAa197e2db245596ea137271f896e893aa')
+    .verificationChecks
+    .create({to: phone, code: req.headers.code})
+    .then(verification_check => {
+        console.log(verification_check.status)
+        if(verification_check.status == 'approved'){
+            console.log("ehehhe")
+            submitVote(req.headers.phone, req.headers.idcandidat)
+            res.json({result: true, message: "Vote is done"})
+        }else{
+            res.json({result: false, message: "Wrong code"})
+        }
+        
+    });
+}
 
 function department(req, res){
     console.log(req.body)
@@ -229,11 +252,20 @@ function verifUserinDB(req, res, next){
 }
 
 // add vote db
-function submitVote(req, res){
-    connection.query("INSERT INTO Votes (id_user, id_candidate) VALUES (?, ?);", [req.body.idVotant,  req.body.idCandidat] , function(error, results, fields) {
-        if (error) throw error;
-        res.send(true);
-    })
+function submitVote(phoneNumber, idCandidat){
+    console.log(idCandidat)
+    try {
+        connection.query("SELECT id FROM Users WHERE phoneNumber LIKE ?;", phoneNumber , function(error, results, fields) {
+            if (error) throw error;
+            if (results.length > 0) {
+                connection.query("INSERT INTO Votes (id_user, id_candidate) VALUES (?, ?);", [results[0].id,  parseInt(idCandidat.toString())] , function(error, results, fields) {
+                    if (error) throw error;
+                })
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 // code de verification
