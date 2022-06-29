@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import com.example.onlyvote.R
 import com.example.onlyvote.data.CityRequest
 import com.example.onlyvote.databinding.FragmentAccountBinding
 import com.google.gson.Gson
@@ -35,6 +37,19 @@ class AccountFragment : Fragment() {
 
         fetchCityData("01").start()
 
+        val spinner = root.findViewById<Spinner>(R.id.spinnerDptOfBirth)
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                fetchCityData(spinner.selectedItem.toString()).start()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+        }
+
         binding.apply {
             buttonDate.setOnClickListener {
                 val datePickerFragment = DatePickerFragment()
@@ -51,7 +66,7 @@ class AccountFragment : Fragment() {
                 }
 
                 datePickerFragment.show(supportFragmentManager, "DatePickerFragment")
-             }
+            }
         }
 
         return root
