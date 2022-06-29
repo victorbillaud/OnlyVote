@@ -13,5 +13,5 @@ module.exports = {
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
     ROUTE_RESULTAT,
-    ROUTE_GET_INSEE
+    ROUTE_GET_INSEE,
 }
