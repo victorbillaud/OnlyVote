@@ -1,5 +1,8 @@
 package com.example.onlyvote.data
 
+/**
+ * Cities element to get from api
+ */
 class CityRequest (
-    val nom: String
+    val nccenr: String
 )

@@ -8,6 +8,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.onlyvote.databinding.ActivityMainBinding
 
+/**
+ * Main activity class
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -25,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+    /**
+     * Show vote page on toolbar button click
+     */
     fun showVoteView(view: View) {
         binding.navView.selectedItemId = R.id.navigation_vote
     }
