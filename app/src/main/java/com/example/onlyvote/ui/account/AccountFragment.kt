@@ -89,15 +89,15 @@ class AccountFragment : Fragment() {
              */
             buttonRegister.setOnClickListener {
                 val userInfo = JSONObject()
-                userInfo.put("Gender", if (radioButtonMale.isChecked) "Homme" else "Femme")
-                userInfo.put("phoneNumber", editTextPhone.text)
-                userInfo.put("email", editTextTextEmailAddress.text)
-                userInfo.put("birthDate", buttonDate.text)
-                userInfo.put("lastname", editTextTextLastName.text)
-                userInfo.put("firstname", editTextTextFirstName.text)
-                userInfo.put("birthTown", spinnerCityOfBirth.selectedItem.toString())
-                userInfo.put("socialNumber", editTextNSS.text)
-                userInfo.put("birthDepartment", spinnerDptOfBirth.selectedItem.toString())
+                    .put("firstname", editTextTextFirstName.text)
+                    .put("lastname", editTextTextLastName.text)
+                    .put("gender", if (radioButtonMale.isChecked) "Homme" else "Femme")
+                    .put("birthDate", buttonDate.text)
+                    .put("birthDepartment", spinnerDptOfBirth.selectedItem.toString())
+                    .put("birthTown", spinnerCityOfBirth.selectedItem.toString())
+                    .put("email", editTextTextEmailAddress.text)
+                    .put("phoneNumber", editTextPhone.text)
+                    .put("socialNumber", editTextNSS.text)
 
                 sendUser(userInfo).start()
             }
@@ -120,6 +120,8 @@ class AccountFragment : Fragment() {
             val outputStreamWriter = OutputStreamWriter(connection.outputStream)
             outputStreamWriter.write(data.toString())
             outputStreamWriter.flush()
+
+            connection.responseCode
         }
     }
 
