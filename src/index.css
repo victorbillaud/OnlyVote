@@ -55,21 +55,19 @@ HEADER
 
 .button_vote {
   float: right;
+  font-size: 17px;
   width: 9%;
-  height: 10%;
   background-color: #000099;
-  font-size: 20px;
   color: white;
   font-family: var(--font-main);
   margin-right: 5%;
-  margin-top : 2%;
-  margin-bottom: 5%;
+  margin-top : 1.5%;
   border : none;
   text-align: center;
   text-decoration: none;
 }
 
-@media only screen and (max-width: 660px){
+@media only screen and (max-width: 700px){
   .button_vote{
     float: right;
     width: 12%;

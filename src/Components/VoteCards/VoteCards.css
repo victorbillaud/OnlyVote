@@ -27,3 +27,7 @@
     /**blabla**/
 }
 
+.buttonContainer{
+    display: flex;
+}
+

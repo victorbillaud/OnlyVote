@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import './Vote.css'
 import VoteCards from "../VoteCards/VoteCards";
 
+
+
 function Vote() {
     return (
         <div class="VotePage">
