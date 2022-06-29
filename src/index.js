@@ -76,8 +76,9 @@ connection.connect((err) => {
 // Fonctions express
 
 function department(req, res){
-    //console.log(req.body)
-    connection.query("SELECT id, DEP, NCCENR FROM commune2021 WHERE DEP NOT LIKE 'null' AND DEP = ?;", req.body.department , function(error, results, fields) {
+    console.log(req.body)
+    const dep = req.body.department ? req.body.department : req.body.data.department.dep
+    connection.query("SELECT id, dep, nccenr FROM commune2021 WHERE dep NOT LIKE 'null' AND dep = ?;", dep, function(error, results, fields) {
         if (error) throw error;
         //console.log(fields)
         res.json(results);
@@ -120,8 +121,12 @@ function register(req, res, next){
 
     // {result: Bool, message: String}
 
+
+
     const userData = req.body;
     const socialNumber = userData.socialNumber;
+
+    console.log(userData)
 
     numSexe = socialNumber.slice(0, 1);
     numAnnee = socialNumber.slice(1,3);
@@ -132,7 +137,7 @@ function register(req, res, next){
 
     if(cle == (97 - nir % 97)){
         verifInseeCode().then(result => {
-            if(result.data.COM && result.data.COM.toString() == numINSEE){
+            if((result.data.COM && result.data.COM.toString() == numINSEE) || numINSEE.slice(0,2) == "75"){
                 if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) && verifBirthAge(userData.birthDate)){
 
                     // CHECK USER OK
