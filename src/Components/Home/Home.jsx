@@ -2,6 +2,8 @@ import HomeCards from "../HomeCards/HomeCards";
 import './Home.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import axios from "axios";
+import {useEffect, useState} from "react";
 
 
 
@@ -26,18 +28,33 @@ function Home() {
             items: 1
         }
     }
+    const [candidates, setCandidates] = useState(undefined);
+
+    useEffect(() => {
+        loadCandidateFromAPI()
+    }, []);
+
+
+    async function loadCandidateFromAPI(){
+        const res = axios({
+            method: 'get',
+            url:"https://onlyvote.victorbillaud.fr/candidat",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((data) => {
+            setCandidates(data.data);
+        });
+    }
 
     return (
 
             <div class="CarouselContainer">
                 <Carousel responsive={responsive}>
-                    <HomeCards/>
-                    <HomeCards/>
-                    <HomeCards/>
-                    <HomeCards/>
-                    <HomeCards/>
-                    <HomeCards/>
-
+                    {candidates
+                        ? candidates.map((candidate) => {
+                            return <HomeCards candidate={candidate}/>
+                        }) : <div>TEST</div>}
                 </Carousel >
             </div>
     )
