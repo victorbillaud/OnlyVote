@@ -24,6 +24,8 @@
     display: block;
     width : 100%;
     height: auto;
-    /**blabla**/
 }
 
+.VoteCardContainer .Checkbox{
+    margin : 10px auto;
+}

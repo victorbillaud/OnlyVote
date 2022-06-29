@@ -11,7 +11,7 @@ function Registred(){
             </label>
 
             <button class="button_conf">
-                Envoyer code de confirmation test
+                Envoyer code de confirmation
             </button>
 
 
