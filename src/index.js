@@ -18,13 +18,12 @@ const {
     ROUTE_DEPARTMENT,
     ROUTE_CANDIDAT,
     ROUTE_RESULTAT,
-    ROUTE_GET_INSEE
+    ROUTE_GET_INSEE,
 } = require("./routes");
 
-// ???
 app.use(express.urlencoded({ extended: false }));
 
-// using bodyParser -> Need ??
+// using bodyParser
 app.use(bodyParser.json());
 
 // enabling CORS for all requests
@@ -33,11 +32,12 @@ app.use(cors());
 
 /*
     SMS
-*/
+
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+*/
 
 // client.messages
 //   .create({
@@ -56,9 +56,11 @@ app.get('/', (req, res) => {
 
 app.post(ROUTE_DEPARTMENT, department);
 app.get(ROUTE_CANDIDAT, getCandidate);
-app.get(ROUTE_RESULTAT, getVotes)
-app.post(ROUTE_REGISTER, register)
-app.post(ROUTE_GET_INSEE, getInseeCode)
+app.get(ROUTE_RESULTAT, getResults);
+app.post(ROUTE_REGISTER, verifUserinDB, register);
+app.post(ROUTE_GET_INSEE, getInseeCode);
+app.post(ROUTE_VOTE, submitVote);
+
 
 // define connection to MySQL database
 const connection = mysql.createConnection({
@@ -87,7 +89,6 @@ function department(req, res){
     
 }
 
-
 function form(req, res, next) {
     console.log(req.body)
     res.json({
@@ -104,7 +105,7 @@ function getCandidate(req, res, next) {
     })
 }
 
-function getVotes(res, res, next) {
+function getResults(res, res, next) {
     connection.query("SELECT * FROM Votes", function(error, results, fields) {
         if (error) throw error;
 
@@ -197,7 +198,7 @@ function register(req, res, next){
         function getInsee(data) {
             return axios.post('https://onlyvote.victorbillaud.fr/insee', {
                 data
-            })
+            }) 
         }
     }
 	  
@@ -209,6 +210,24 @@ function getInseeCode(req, res){
         if (results.length > 0) {
             res.json(results[0])
         }else res.send(false);
+    })
+}
+
+// verif si user existant
+function verifUserinDB(req, res, next){
+    connection.query("SELECT * FROM Users WHERE num_secu LIKE ? AND phoneNumber = ? ;", [req.body.socialNumber,  req.body.phoneNumber] , function(error, results, fields) {
+        if (error) throw error;
+        if (results.length > 0) {
+            res.send({result: false, message: "User already in database"});
+        }else next();
+    })
+}
+
+// add vote db
+function submitVote(req, res){
+    connection.query("INSERT INTO Votes (id_user, id_candidate) VALUES (?, ?);", [req.body.idVotant,  req.body.idCandidat] , function(error, results, fields) {
+        if (error) throw error;
+        res.send(true);
     })
 }
 
