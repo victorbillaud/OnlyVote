@@ -12,7 +12,7 @@
     <string name="edittext_email">Adresse mail</string>
     <string name="edittext_phone">Numéro de téléphone</string>
     <string name="button_register">S\'enregistrer</string>
-    <string name="button_date">01-01-1901</string>
+    <string name="button_date">01-01-1991</string>
     <string name="plaintext_date">Date de naissance :</string>
     <string name="plaintext_socialNumber">Numéro de sécurité social</string>
     <string name="textview_dptOfBirth">Département de naissance :</string>

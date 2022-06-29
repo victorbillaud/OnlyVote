@@ -34,8 +34,6 @@ class AccountFragment : Fragment() {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        fetchCityData(JSONObject().put("department", 1)).start()
-
         binding.apply {
             val data: ArrayList<Int> = ArrayList()
 
