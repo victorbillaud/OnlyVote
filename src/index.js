@@ -5,7 +5,14 @@ const mysql = require('mysql');
 const axios  = require('axios');
 const moment = require('moment')
 
-require('dotenv').config({path:'../.env'});
+// -------- IMPORT LIB FUNCTIONS --------- //
+
+const smsServices = require('../lib/sms/smsServices')
+const department = require('../lib/department')
+const candidate = require('../lib/candidate')
+const user = require('../lib/user')
+
+require('dotenv').config();
 //{path:'../.env'}
 
 // defining the Express app
@@ -31,242 +38,12 @@ app.use(bodyParser.json());
 // enabling CORS for all requests
 app.use(cors());
 
-
-
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
-
-
-
-// defining an endpoint to return all ads
-app.get('/', (req, res) => {
-    res.send(ads);
-});
-
-app.post(ROUTE_DEPARTMENT, department);
-app.get(ROUTE_CANDIDAT, getCandidate);
-app.get(ROUTE_RESULTAT, getResults);
-app.post(ROUTE_REGISTER, verifUserinDB, register);
-app.post(ROUTE_GET_INSEE, getInseeCode);
-app.post(ROUTE_VOTE, submitVote);
-app.get(ROUTE_CODE, submitCode);
-app.get(ROUTE_CHECK, checkCode);
-
-
-// define connection to MySQL database
-const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER ? process.env.USER : "onlyvote" ,
-    password: process.env.PASSWORD ? process.env.PASSWORD : "onlyvote",
-    database: process.env.DATABASE
-});
-
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected!');
-})
-
-// Fonctions express
-
-function submitCode(req,res){
-    console.log(req.headers)
-    const phone = '+33' + req.headers.phone.substr(1)
-    client.verify.services('VAa197e2db245596ea137271f896e893aa')
-             .verifications
-             .create({to: phone, channel: 'sms'})
-             .then(verification => {
-                console.log(verification.sid)
-                res.json({result: true, message: "Message sended"})
-             });
-}
-
-function checkCode(req,res){
-    console.log(req.headers)
-    const phone = '+33' + req.headers.phone.substr(1)
-    client.verify.services('VAa197e2db245596ea137271f896e893aa')
-    .verificationChecks
-    .create({to: phone, code: req.headers.code})
-    .then(verification_check => {
-        console.log(verification_check.status)
-        if(verification_check.status == 'approved'){
-            console.log("ehehhe")
-            submitVote(req.headers.phone, req.headers.idcandidat)
-            res.json({result: true, message: "Vote is done"})
-        }else{
-            res.json({result: false, message: "Wrong code"})
-        }
-        
-    });
-}
-
-function department(req, res){
-    console.log(req.body)
-    const dep = req.body.department ? req.body.department : req.body.data.department.dep
-    connection.query("SELECT id, dep, nccenr FROM commune2021 WHERE dep NOT LIKE 'null' AND dep = ?;", dep, function(error, results, fields) {
-        if (error) throw error;
-        //console.log(fields)
-        res.json(results);
-        //console.log(JSON.stringify(results))
-        res.end();
-    })
-    
-}
-
-function form(req, res, next) {
-    console.log(req.body)
-    res.json({
-        "response": "user registered"
-    })
-}
-
-function getCandidate(req, res, next) {
-    connection.query("SELECT * FROM Candidate", function(error, results, fields) {
-        if (error) throw error;
-
-        res.json(results);
-        res.end();
-    })
-}
-
-function getResults(res, res, next) {
-    connection.query("SELECT * FROM Votes", function(error, results, fields) {
-        if (error) throw error;
-
-        res.json(results);
-        res.end();
-    })
-}
-
-// check user data + carte vitale
-function register(req, res, next){
-
-    // IL FAUT RESPECTER LE MODELE DE REPONSE
-
-    // {result: Bool, message: String}
-
-
-
-    const userData = req.body;
-    const socialNumber = userData.socialNumber;
-
-    console.log(userData)
-
-    numSexe = socialNumber.slice(0, 1);
-    numAnnee = socialNumber.slice(1,3);
-    numMois = socialNumber.slice(3, 5);
-    numINSEE = socialNumber.slice(5, 10);
-    cle = socialNumber.slice(13, 15);
-    nir = socialNumber.slice(0, 13);
-
-    if(cle == (97 - nir % 97)){
-        verifInseeCode().then(result => {
-            if((result.data.COM && result.data.COM.toString() == numINSEE) || numINSEE.slice(0,2) == "75"){
-                if (verifGender(userData.gender) == numSexe && verifBirthDate(userData.birthDate) && verifBirthAge(userData.birthDate)){
-
-                    // CHECK USER OK
-                    // ENREGISTREMENT DANS LA DB OK
-                    console.log( userData.birthDate)
-                    connection.query("INSERT INTO Users (num_secu, dateOfBirth, gender, stateOfBirth, townOfBirth, phoneNumber, email, firstname, lastname) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", 
-                        [userData.socialNumber, convertDateFormat(), userData.gender, userData.birthDepartment, userData.birthTown, userData.phoneNumber, userData.email, userData.firstname, userData.lastname], 
-                        function(error, results, fields) {
-                            console.log(results)
-                            if (error) throw error;
-                        }
-                    )
-
-
-                    res.send({result: true, message: "User Registred"})
-                } else res.send({result: false, message: "Info Invalid"})
-            } else res.send({result: false, message: "Numero INSEE invalid"})
-        })
-    }else{
-        res.send({result: false, message: "Social card number invalid"})
-    }
-
-    // verificaton du genre
-    function verifGender(){
-        return sexe = userData.gender == 'homme' ? 1 : 2; 
-    }
-
-    // verification de la date de naissance
-    function verifBirthDate(){
-        var date = new Date(userData.birthDate * 1000);
-        // Hours part from the timestamp
-        const year = Number(date.getFullYear().toString().slice(-2));
-        const month = date.getMonth();
-
-        if(year == numAnnee && month + 1 == numMois){
-            return true;
-        }
-        return false;
-    }
-
-    function convertDateFormat(){
-        const date = new Date(userData.birthDate * 1000).toISOString().slice(0, 19).replace('T', ' ');;
-        return date
-    }
-
-    // verification de l'age
-    function verifBirthAge(){
-        var date = new Date(userData.birthDate * 1000);
-        return (new Date(new Date() - date).getYear() - 70) >= 18 ? true : false;
-    }
-
-    // verification du code insee de la commune
-    function verifInseeCode(){
-        var INSEE = null;
-        const response = getInsee({
-            com : userData.birthTown,
-            dep : userData.birthDepartment
-        });
-
-        return response
-
-        function getInsee(data) {
-            return axios.post('https://onlyvote.victorbillaud.fr/insee', {
-                data
-            }) 
-        }
-    }
-	  
-}
-
-function getInseeCode(req, res){
-    connection.query("SELECT COM FROM commune2021 WHERE NCCENR LIKE ? AND DEP = ? ;", [req.body.data.com,  req.body.data.dep] , function(error, results, fields) {
-        if (error) throw error;
-        if (results.length > 0) {
-            res.json(results[0])
-        }else res.send(false);
-    })
-}
-
-// verif si user existant
-function verifUserinDB(req, res, next){
-    connection.query("SELECT * FROM Users WHERE num_secu LIKE ? AND phoneNumber = ? ;", [req.body.socialNumber,  req.body.phoneNumber] , function(error, results, fields) {
-        if (error) throw error;
-        if (results.length > 0) {
-            res.send({result: false, message: "User already in database"});
-        }else next();
-    })
-}
-
-// add vote db
-function submitVote(phoneNumber, idCandidat){
-    console.log(idCandidat)
-    try {
-        connection.query("SELECT id FROM Users WHERE phoneNumber LIKE ?;", phoneNumber , function(error, results, fields) {
-            if (error) throw error;
-            if (results.length > 0) {
-                connection.query("INSERT INTO Votes (id_user, id_candidate) VALUES (?, ?);", [results[0].id,  parseInt(idCandidat.toString())] , function(error, results, fields) {
-                    if (error) throw error;
-                })
-            }
-        })
-    } catch (error) {
-        console.log(error)
-    }
-}
+app.post(ROUTE_DEPARTMENT, department.getTowns);
+app.get(ROUTE_CANDIDAT, candidate.getAll);
+app.post(ROUTE_REGISTER, user.verifInDatabase, user.register);
+app.post(ROUTE_GET_INSEE, department.getInseeCode);
+app.get(ROUTE_CODE, smsServices.submit);
+app.get(ROUTE_CHECK, smsServices.check);
 
 // code de verification
 app.listen(process.env.PORT, () => {
