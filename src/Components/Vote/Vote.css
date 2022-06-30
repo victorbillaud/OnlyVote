@@ -12,6 +12,10 @@
     font-size: medium;
 }
 
+.VoteIntro h2{
+    text-align: center;
+}
+
 .CandidateList{
     width: 80%;
     margin : 5em auto;

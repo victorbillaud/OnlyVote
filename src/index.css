@@ -43,6 +43,7 @@ HEADER
   margin-bottom: 20px;
 }
 
+
 @media only screen and (max-width: 660px){
   .logo{
     width: 20%;
@@ -53,6 +54,8 @@ HEADER
   }
 }
 
+
+
 .button_vote {
   float: right;
   font-size: 20px;
@@ -62,21 +65,21 @@ HEADER
   color: white;
   font-family: var(--font-main);
   margin-right: 5%;
-  margin-top : 1.5%;
+  margin-top : 2vw;
   border : none;
   text-align: center;
   text-decoration: none;
 }
 
-@media only screen and (max-width: 700px){
-  .button_vote{
+@media only screen and (max-width: 700px) {
+  .button_vote {
     float: right;
     font-size: medium;
     overflow: hidden;
     background-color: #000099;
     color: white;
     font-family: var(--font-main);
-    border : none;
+    border: none;
     text-align: center;
     text-decoration: none;
   }

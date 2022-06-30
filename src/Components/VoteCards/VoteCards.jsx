@@ -1,16 +1,15 @@
 import './VoteCards.css'
-import candidat from '../../Assets/candidat.png';
 
-function VoteCards() {
+function VoteCards({candidate}) {
 
     return (
 
         <div class="VoteCardContainer">
             <div class="PictureContainer">
-                <img src={candidat} alt="Candidat 1 photo" class="CardPictureVote"/>
+                <img src={candidate.profilePicture} alt="Candidat 1 photo" class="CardPictureVote"/>
             </div>
-            <div className="CardTitle">Candidat 1</div>
-            <div class="CardExplain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            <div className="CardTitle">{candidate.firstname} {candidate.lastname}</div>
+            <div class="CardExplain">{candidate.program}</div>
             <div class="Checkbox"><input type="checkbox" /></div>
         </div>
     );

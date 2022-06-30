@@ -1,10 +1,9 @@
 import './HomeCards.css'
-import candidat from '../../Assets/candidat.png';
 
 function HomeCards({candidate}) {
     return (
         <div class="CardContainer">
-            <div class="PictureContainer">
+            <div class="PictureContainerHome">
                 <img src={candidate.profilePicture}  class="CardPicture"  alt="Jean Lassalle le bg" />
             </div>
             <div class="CardTitle">{candidate.firstname} {candidate.lastname}</div>

@@ -54,7 +54,7 @@ function Home() {
                     {candidates
                         ? candidates.map((candidate) => {
                             return <HomeCards candidate={candidate}/>
-                        }) : <div>TEST</div>}
+                        }) : <div>SERVEUR DECONNECTE</div>}
                 </Carousel >
             </div>
     )
