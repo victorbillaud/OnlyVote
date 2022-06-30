@@ -8,3 +8,4 @@ var party : String
 var program : String
 var profilePicture : String 
 ```
+
