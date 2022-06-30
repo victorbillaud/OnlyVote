@@ -1,13 +1,17 @@
 package com.example.onlyvote.ui.account
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.example.onlyvote.R
 import com.example.onlyvote.data.CityRequest
 import com.example.onlyvote.databinding.FragmentAccountBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import java.net.HttpURLConnection
 import java.net.URL
@@ -86,18 +90,22 @@ class AccountFragment : Fragment() {
              * Create then send user informations to api on button click
              */
             buttonRegister.setOnClickListener {
-                val userInfo = JSONObject()
-                    .put("firstname", editTextTextFirstName.text)
-                    .put("lastname", editTextTextLastName.text)
-                    .put("gender", if (radioButtonMale.isChecked) "Homme" else "Femme")
-                    .put("birthDate", buttonDate.text)
-                    .put("birthDepartment", spinnerDptOfBirth.selectedItem.toString())
-                    .put("birthTown", spinnerCityOfBirth.selectedItem.toString())
-                    .put("email", editTextTextEmailAddress.text)
-                    .put("phoneNumber", editTextPhone.text)
-                    .put("socialNumber", editTextNSS.text)
+                if (checkAllFields()) {
+                    val userInfo = JSONObject()
+                        .put("firstname", editTextTextFirstName.text)
+                        .put("lastname", editTextTextLastName.text)
+                        .put("gender", if (radioButtonMale.isChecked) "Homme" else "Femme")
+                        .put("birthDate", buttonDate.text)
+                        .put("birthDepartment", spinnerDptOfBirth.selectedItem.toString())
+                        .put("birthTown", spinnerCityOfBirth.selectedItem.toString())
+                        .put("email", editTextTextEmailAddress.text)
+                        .put("phoneNumber", editTextPhone.text)
+                        .put("socialNumber", editTextNSS.text)
 
-                sendUser(userInfo).start()
+                    sendUser(userInfo).start()
+
+                    root.rootView.findViewById<BottomNavigationView>(R.id.nav_view).selectedItemId = R.id.navigation_vote
+                }
             }
         }
 
@@ -176,7 +184,7 @@ class AccountFragment : Fragment() {
      * @param request
      */
     /* private fun updateUiDpts(request: Array<DptsRequest>) {
-        activity?.runOnUiThread {
+        requireActivity().runOnUiThread {
             kotlin.run {
                 val spinner: Spinner = binding.spinnerDptOfBirth
                 val data: ArrayList<String> = ArrayList()
@@ -197,7 +205,7 @@ class AccountFragment : Fragment() {
      * @param request
      */
     private fun updateUiCity(request: Array<CityRequest>) {
-        activity?.runOnUiThread {
+        requireActivity().runOnUiThread {
             kotlin.run {
                 val spinner: Spinner = binding.spinnerCityOfBirth
                 val data: ArrayList<String> = ArrayList()
@@ -210,6 +218,40 @@ class AccountFragment : Fragment() {
 
                 spinner.adapter = adapter
             }
+        }
+    }
+
+    /**
+     * Check all fields depending on type
+     */
+    private fun checkAllFields(): Boolean {
+        binding.apply {
+            if (editTextTextFirstName.length() == 0) {
+                editTextTextFirstName.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#e1000f"))
+                return false
+            }
+
+            if (editTextTextLastName.length() == 0) {
+                editTextTextLastName.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#e1000f"))
+                return false
+            }
+
+            if (!editTextTextEmailAddress.text.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$".toRegex())) {
+                editTextTextEmailAddress.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#e1000f"))
+                return false
+            }
+
+            if (editTextPhone.length() != 10) {
+                editTextPhone.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#e1000f"))
+                return false
+            }
+
+            if (editTextNSS.length() != 15) {
+                editTextNSS.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#e1000f"))
+                return false
+            }
+
+            return true
         }
     }
 
