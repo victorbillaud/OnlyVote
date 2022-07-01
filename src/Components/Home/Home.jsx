@@ -43,7 +43,7 @@ function Home() {
                 'Content-Type': 'application/json',
             },
         }).then((data) => {
-            setCandidates(data.data);
+            setCandidates(data.data.sort(() => (Math.random() > .5) ? 1 : -1));
         });
     }
 
