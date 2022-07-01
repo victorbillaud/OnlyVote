@@ -40,7 +40,7 @@ app.post(ROUTE_DEPARTMENT, department.getTowns);
 app.get(ROUTE_CANDIDAT, candidate.getAll);
 app.post(ROUTE_REGISTER, user.verifInDatabase, user.register);
 app.post(ROUTE_GET_INSEE, department.getInseeCode);
-app.get(ROUTE_CODE, user.verifUserVote, smsServices.submit);
+app.get(ROUTE_CODE, user.verifUserRegistered, user.verifUserVote, smsServices.submit);
 app.get(ROUTE_CHECK, smsServices.check);
 
 // code de verification
