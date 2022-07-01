@@ -8,15 +8,29 @@ function Header(){
         <div className="header">
             <header className="App-header">
                 <Link to="/" class="logo" alt="logo_OnlyVote" >
-                <img src={logo_OV} class="logo" alt="logo_OnlyVote" />
+                    <img src={logo_OV} class="logo" alt="logo_OnlyVote" />
                 </Link>
                 {
-                    location.pathname !== "/vote" ? 
+                    location.pathname === "/" ? 
                     <Link to="/vote" class="button_vote">
                         Voter
                     </Link> : null
+                    
                 }
-                {console.log(location.pathname)}
+                {
+                    location.pathname === "/vote" ? 
+                    <Link to="/form" class="button_vote">
+                        S'enregistrer
+                    </Link> : null
+                    
+                }
+                {
+                    location.pathname === "/form" ? 
+                    <Link to="/vote" class="button_vote">
+                    Voter
+                    </Link> : null
+                    
+                }
             </header>
         </div>
     );

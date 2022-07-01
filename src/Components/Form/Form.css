@@ -1,4 +1,4 @@
-.container{
+.container-register{
     width: 70%;
     text-align: center;
     margin: 0 auto;
@@ -22,6 +22,7 @@
     text-decoration: none;
     margin : 2em auto;
     padding: 10px;
+    cursor: pointer;
 }
 
 .already{
@@ -32,35 +33,41 @@
     font-size: 15px;
 }
 
-.form_1{
-    vertical-align: center;
-    margin: 0 auto;
-    text-align: center;
-}
 
-form {
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 500px;
-    padding: 30px 50px;
-}
-
-.form_1 input {
-    margin: 10px;
+select {
     border: 1px solid #d9d9d9;
     border-radius: 4px;
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
+    font-family: var(--font-main);
+    text-align: center;
+  }
+
+.form { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 60%;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.form input {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    font-family: var(--font-main);
+    text-align: center;
 }
 
 label {
     color: #3d3d3d;
     display: block;
-    font-family: sans-serif;
+    font-family: var(--font-main);
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 5px;

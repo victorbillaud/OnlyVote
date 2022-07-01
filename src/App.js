@@ -52,7 +52,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/vote" element={<Vote />} />
               <Route path="/form" element={<Form />} />
-              <Route path="/Registred" element={<Registred />} />
           </Routes>
       </BrowserRouter>
         <Footer />

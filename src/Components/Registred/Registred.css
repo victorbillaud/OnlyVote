@@ -23,12 +23,13 @@
     -webkit-transition: all .5s;
     transition: all .5s;
     filter: blur(10px);
-    color: transparent;
+    color: #000099;
+    box-shadow: none;
 }
 
 .title_registred span:hover {
     color: #000099;
-    filter: blur(0px);
+    filter: none;
  }
 
  .button_change_vote{
