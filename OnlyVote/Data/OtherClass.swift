@@ -12,6 +12,7 @@ enum Gender: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
-struct RegisterResponse: Codable, Equatable, Hashable {
-    var response: String
+struct TemplateResponseExpress: Codable, Equatable, Hashable {
+    var result: Bool
+    var message: String
 }

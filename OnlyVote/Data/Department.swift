@@ -10,8 +10,8 @@ import Foundation
 
 struct Town: Identifiable, Codable, Equatable, Hashable {
     var id : Int
-    var DEP : Int
-    var NCCENR : String
+    var dep : Int
+    var nccenr : String
 }
 
 class DepartmentController: ObservableObject {

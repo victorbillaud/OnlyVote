@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var tabSelection = 2
+    @State var tabSelection = 2
 
     
     init() {

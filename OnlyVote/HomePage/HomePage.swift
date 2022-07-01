@@ -9,26 +9,14 @@ import SwiftUI
 
 struct HomePage: View {
     
-    @State var candidates : [Candidate]
-    
-    init() {
-        candidates = [
-            Candidate(id: 0, firstname: "Jean", lastname: "Lasalle", party: "Résistons !", program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", profilePicture: "https://cdn.radiofrance.fr/s3/cruiser-production/2022/02/5a05d9f7-53f5-40fe-b144-0384b813517a/1200x680_maxnewsworldfive469097.jpg"),
-            Candidate(id: 1, firstname: "Jean", lastname: "Lasalle", party: "Résistons !", program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", profilePicture: "https://cdn.radiofrance.fr/s3/cruiser-production/2022/02/5a05d9f7-53f5-40fe-b144-0384b813517a/1200x680_maxnewsworldfive469097.jpg"),
-            Candidate(id: 2, firstname: "Jean", lastname: "Lasalle", party: "Résistons !", program: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", profilePicture: "https://cdn.radiofrance.fr/s3/cruiser-production/2022/02/5a05d9f7-53f5-40fe-b144-0384b813517a/1200x680_maxnewsworldfive469097.jpg")
-       
-       
-        ]
-    }
+    @State var candidates : [Candidate] = []
     
     @State var currentIndex: Int = 0
     
     var body: some View {
         
         VStack{
-            
-            
-            SnapCarousel(spacing: 25,index: $currentIndex, items: candidates) { current in
+            SnapCarousel(spacing: 25,index: $currentIndex, items: candidates.shuffled()) { current in
                 GeometryReader{ proxy in
                     let size = proxy.size
 
@@ -38,13 +26,14 @@ struct HomePage: View {
                             .frame(width: size.width)
                         Spacer()
                     }
-
                 }
             }
-            
+        }.onAppear(){
+            ApiService().getCandidate {resultCandidate in
+                self.candidates = resultCandidate
+            }
         }
     }
-    
 }
 
 struct SnapCarousel<Content : View, T: Identifiable> : View {

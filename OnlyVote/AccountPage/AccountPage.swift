@@ -24,7 +24,7 @@ struct AccountPage: View {
     @State private var lastname = ""
     @State private var gender: Gender = .male
     @State private var birthDate = Date()
-    @State private var birthDepartment = 0
+    @State private var birthDepartment = 75
     @State private var birthTown = ""
     @State private var email = ""
     @State private var isEmailValid = true
@@ -34,17 +34,34 @@ struct AccountPage: View {
     @State private var isSocialNumberValid = true
     
     @State private var showingBirthSelection = false
+    @State private var isRegistered = false
+    @State private var returnMessage = "";
     
     
     var body: some View {
-        VStack {
+        if(isRegistered == true){
+            VStack{
+                Text("Félicitations !")
+                    .font(Font.custom("Marianne-Medium", size: 20))
+                    .padding()
+                Text(returnMessage)
+                    .font(Font.custom("Marianne-Regular", size: 20))
+            }
+        } else {
+            VStack {
             
             // TITLE
             Text("S'enregistrer")
+                .font(Font.custom("Marianne-Medium", size:30))
                 .bold()
                 .font(.largeTitle)
-                .padding(0.5)
-            
+                .padding(10)
+                
+                Text(returnMessage)
+                    .font(Font.custom("Marianne-Medium", size:15))
+                    .foregroundColor(.red)
+                    .bold()
+                    .padding(10)
             
             // GENDER
             Picker("Sexe", selection: $gender) {
@@ -70,7 +87,7 @@ struct AccountPage: View {
                     Divider()
                         .foregroundColor(Color("Bleu France"))
                         .frame(height: 50)
-                    SecureField("Nom", text: $lastname)
+                    TextField("Nom", text: $lastname)
                         .padding()
                         .frame(width: 130, height: 50, alignment: .center)
                 }
@@ -202,7 +219,13 @@ struct AccountPage: View {
                     phoneNumber: phoneNumber,
                     socialNumber: socialNumber
                 ) { response in
-                    print(response)
+                    if(response.result == true){
+                        isRegistered = true
+                        returnMessage = response.message
+                    }else{
+                        isRegistered = false
+                        returnMessage = response.message
+                    }
                 }
             })
             .disabled(
@@ -277,10 +300,10 @@ struct AccountPage: View {
                 
                 List{
                     ForEach(self.towns, id:\.self) { department in
-                        Text(department.NCCENR)
+                        Text(department.nccenr)
                             .tag(department.id)
                             .onTapGesture {
-                                birthTown = department.NCCENR
+                                birthTown = department.nccenr
                                 showingBirthSelection.toggle()
                             }
                     }
@@ -291,7 +314,7 @@ struct AccountPage: View {
                 .padding()
             }
             
-            
+        }
             
         }
         
