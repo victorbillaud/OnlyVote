@@ -88,6 +88,19 @@
     text-align: center;
 }
 
+.TitrePopup span {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    filter: blur(10px);
+    color: transparent;
+}
+
+.TitrePopup span:hover {
+    color: #000099;
+    filter: blur(0px);
+ }
+
+
 .formpopup{
     vertical-align: center;
     margin: 0 auto;

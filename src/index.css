@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+input {
+  outline: none;
+}
+
 @font-face {
   font-family: 'Mariane';
   src: url('./Assets/fonts/Marianne-Regular.otf');

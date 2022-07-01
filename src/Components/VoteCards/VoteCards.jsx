@@ -4,13 +4,15 @@ function VoteCards({candidate}) {
 
     return (
 
-        <div class="VoteCardContainer">
-            <div class="PictureContainer">
-                <img src={candidate.profilePicture} alt="Candidat 1 photo" class="CardPictureVote"/>
-            </div>
-            <div className="CardTitle">{candidate.firstname} {candidate.lastname}</div>
-            <div class="CardExplain">{candidate.program}</div>
-            <div class="Checkbox"><input type="checkbox" /></div>
+        
+        <div  class="VoteCardContainer">
+            <input type="radio" id={candidate.id} name="vote" value={candidate.id} />
+            <label class="LabelVoteCardContainer" for={candidate.id} >
+                <div class="PictureContainer">
+                    <img src={candidate.profilePicture} alt="Candidat 1 photo" class="CardPictureVote"/>
+                </div>
+                <div className="CardTitle">{candidate.firstname} {candidate.lastname}</div>
+            </label>
         </div>
     );
 };

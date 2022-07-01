@@ -1,23 +1,63 @@
 .container{
-    width: 70%;
+    min-width: 100%;
     text-align: center;
-    margin: 0 auto;
     font-family: var(--font-main);
 }
+
+.container div{
+    margin: 1em;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
 
 .title_registred{
     text-align: center;
     width: 100%;
-    margin-bottom: 10%;
+    height: 100%;
+    font-size: 1em;
 }
+
+.title_registred span {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    filter: blur(10px);
+    color: transparent;
+}
+
+.title_registred span:hover {
+    color: #000099;
+    filter: blur(0px);
+ }
+
+ .button_change_vote{
+    border: none;
+    background-color: transparent;
+    color: #000099;
+    cursor: pointer;
+ }
+
+ .console_message{
+    font-size: 1em;
+    color: red;
+    font-family: var(--font-main);
+    margin-top: 1em;
+ }
 
 label {
     color: #3d3d3d;
     display: block;
-    font-family: sans-serif;
+    font-family: var(--font-main);
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 5px;
+   
+}
+
+.label_phone {
+    padding: 1em;
+    font-family: var(--font-main);
 }
 
 .input_r {
@@ -27,20 +67,22 @@ label {
     box-sizing: border-box;
     padding: 10px;
     width: 30%;
+    outline: none;
 }
 
 .button_conf {
-    width: 40%;
-    height: 10%;
-    display: block;
-    background-color: white;
-    font-size: 20px;
-    color: #000099;
+    background-color: #000099;
     font-family: var(--font-main);
-    border-color : #000099 ;
+    border: none;
+    color: white;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
-    margin: 2em auto;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 30%;
 }
 
 @media only screen and (max-width: 970px){

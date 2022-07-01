@@ -1,11 +1,26 @@
 .VoteCardContainer{
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 25%;
     margin : 2em;
-    min-width: 200px;
+    height: fit-content;
 }
+
+.LabelVoteCardContainer{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+input[type='radio'][name='vote'] {
+    display: none;
+}
+
+input[type="radio"]:checked+ .LabelVoteCardContainer{ 
+    border: 1px solid rgba(0, 0, 153, 0.55) ;
+    scale: 1.05;
+} 
 
 @media only screen and (max-width: 660px){
     .VoteCardContainer{
@@ -26,7 +41,10 @@
     height: inherit;
     border-radius: inherit;
     object-fit: cover;
+}
 
+.CardTitle{
+    height: 3em;
 }
 
 .VoteCardContainer .Checkbox{
