@@ -9,8 +9,9 @@
         <!--Top and bottom bar color-->
         <item name="colorOnPrimary">@color/dark</item>
         <!-- Secondary brand color. -->
+        <!--PageView Item background colorr-->
+        <item name="colorSecondary">@color/android_dark</item>
         <!--Other color-->
-        <item name="colorSecondary">@color/dark_gouv_blue</item>
         <item name="colorSecondaryVariant">@color/dark_gouv_blue</item>
         <item name="colorOnSecondary">@color/dark_gouv_blue</item>
         <!-- Status bar color. -->

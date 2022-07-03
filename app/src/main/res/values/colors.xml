@@ -7,4 +7,6 @@
     <color name="dark">#333333</color>
     <color name="light_dark">#4f4f4f</color>
     <color name="dark_gouv_blue">#8585f6</color>
+    <color name="light_white">#f6f6f6</color>
+    <color name="android_dark">#121212</color>
 </resources>

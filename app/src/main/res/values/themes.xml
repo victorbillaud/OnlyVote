@@ -10,7 +10,7 @@
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <!--Other color-->
-        <item name="colorSecondary">@color/gouv_blue</item>
+        <item name="colorSecondary">@color/light_white</item>
         <item name="colorSecondaryVariant">@color/gouv_blue</item>
         <item name="colorOnSecondary">@color/gouv_blue</item>
         <!-- Status bar color. -->
