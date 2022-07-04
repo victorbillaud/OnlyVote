@@ -9,10 +9,10 @@
         <!--Top and bottom bar color-->
         <item name="colorOnPrimary">@color/dark</item>
         <!-- Secondary brand color. -->
-        <!--PageView Item background colorr-->
-        <item name="colorSecondary">@color/android_dark</item>
-        <!--Other color-->
-        <item name="colorSecondaryVariant">@color/dark_gouv_blue</item>
+        <!--Datepicker color-->
+        <item name="colorSecondary">@color/dark_gouv_blue</item>
+        <!--Candidate background page color-->
+        <item name="colorSecondaryVariant">@color/android_dark</item>
         <item name="colorOnSecondary">@color/dark_gouv_blue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

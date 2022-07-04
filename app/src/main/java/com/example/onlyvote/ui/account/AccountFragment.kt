@@ -104,6 +104,12 @@ class AccountFragment : Fragment() {
 
                     sendUser(userInfo).start()
 
+                    editTextTextFirstName.text = null
+                    editTextTextLastName.text = null
+                    editTextTextEmailAddress.text = null
+                    editTextPhone.text = null
+                    editTextNSS.text = null
+
                     root.rootView.findViewById<BottomNavigationView>(R.id.nav_view).selectedItemId = R.id.navigation_vote
                 }
             }
