@@ -1,5 +1,6 @@
 package com.example.onlyvote.ui.vote
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +9,11 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.onlyvote.data.CandidateRequest
 import com.example.onlyvote.databinding.FragmentVoteBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 import android.widget.*
-import com.example.onlyvote.R
 
 class VoteFragment : Fragment() {
 
@@ -36,7 +35,7 @@ class VoteFragment : Fragment() {
 
         binding.apply {
             buttonSave.setOnClickListener {
-
+                activity?.startActivity(Intent(activity, SendMessageActivity::class.java))
             }
         }
 

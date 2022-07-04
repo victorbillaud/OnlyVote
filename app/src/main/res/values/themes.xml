@@ -19,5 +19,6 @@
         <!-- Customize your theme here. -->
         <item name="fontFamily">@font/marianne_medium</item>
         <item name="android:textColor">@color/black</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 </resources>

@@ -21,4 +21,8 @@
     <string name="textview_save_vote">Sauvegarder</string>
     <string name="textview_select_vote">Sélectionnez votre choix</string>
     <string name="textview_info_vote">Si vous souhaitez voter vous devez dans un premier temps vous enregistrer sur la page d\'inscription. Si vous êtes déja inscris vous pouvez poursuivre sur cette page et enregistrer votre vote.</string>
+    <string name="button_change_vote">Changer mon vote</string>
+    <string name="button_send_code">Envoyer le code</string>
+    <string name="text_view_info_send_code">Avant de valider votre vote nous avons besoin de vérifier votre identité, pour ce faire un code de vérification va être envoyé sur votre téléphone.</string>
+    <string name="text_view_please_phone">Merci de reseigner le numéro de téléphone ci-dessous</string>
 </resources>
