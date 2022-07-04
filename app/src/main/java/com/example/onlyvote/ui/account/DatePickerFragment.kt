@@ -19,6 +19,13 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         return DatePickerDialog(requireActivity(), this, year, month, day)
     }
 
+    /**
+     * Initialise dataPicker
+     * @param p0
+     * @param year
+     * @param month
+     * @param dayOfMonth
+     */
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         calendar.set(Calendar.YEAR, year)
         calendar.set(Calendar.MONTH, month)

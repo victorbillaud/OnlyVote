@@ -12,6 +12,9 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
+/**
+ * Candidate page class
+ */
 class CandidatesFragment : Fragment() {
 
     private var _binding: FragmentCandidatesBinding? = null
@@ -37,6 +40,9 @@ class CandidatesFragment : Fragment() {
         return root
     }
 
+    /**
+     * Fetch all candidate informations from api
+     */
     private fun fetchCandidateData() : Thread {
         return Thread {
             val url = URL("https://onlyvote.victorbillaud.fr/candidat")
@@ -52,6 +58,10 @@ class CandidatesFragment : Fragment() {
         }
     }
 
+    /**
+     * Update the UI on fetching candidate informations
+     * @param request
+     */
     private fun updateUiViewPager(request: Array<CandidateRequest>) {
         requireActivity().runOnUiThread {
             kotlin.run {

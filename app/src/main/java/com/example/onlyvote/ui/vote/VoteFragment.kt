@@ -15,6 +15,9 @@ import java.net.HttpURLConnection
 import java.net.URL
 import android.widget.*
 
+/**
+ * Vote page class
+ */
 class VoteFragment : Fragment() {
 
     private var _binding: FragmentVoteBinding? = null
@@ -42,6 +45,9 @@ class VoteFragment : Fragment() {
         return root
     }
 
+    /**
+     * Fetch all candidate names from api
+     */
     private fun fetchCandidateNames() : Thread {
         return Thread {
             val url = URL("https://onlyvote.victorbillaud.fr/candidat")
@@ -57,6 +63,10 @@ class VoteFragment : Fragment() {
         }
     }
 
+    /**
+     * Update the UI on fetching candidate names
+     * @param request
+     */
     private fun updateUiCandidateNamesSpinner(request: Array<CandidateRequest>) {
         requireActivity().runOnUiThread {
             kotlin.run {
