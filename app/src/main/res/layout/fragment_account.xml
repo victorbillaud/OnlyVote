@@ -13,7 +13,6 @@
         android:autofillHints=""
         android:backgroundTint="?attr/colorPrimary"
         android:ems="10"
-        android:fontFamily="@font/marianne_medium"
         android:hint="@string/edittext_email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
@@ -31,7 +30,6 @@
         android:autofillHints=""
         android:backgroundTint="?attr/colorPrimary"
         android:ems="10"
-        android:fontFamily="@font/marianne_medium"
         android:hint="@string/edittext_phone"
         android:inputType="phone"
         android:minHeight="48dp"
@@ -49,7 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_secondary"
-        android:fontFamily="@font/marianne_medium"
         android:padding="4dp"
         android:text="@string/button_date"
         android:textColor="?attr/colorPrimary"
@@ -78,7 +75,6 @@
         android:autofillHints=""
         android:backgroundTint="?attr/colorPrimary"
         android:ems="10"
-        android:fontFamily="@font/marianne_medium"
         android:hint="@string/plaintext_socialNumber"
         android:inputType="number"
         android:minHeight="48dp"
@@ -162,7 +158,6 @@
         android:autofillHints=""
         android:backgroundTint="?attr/colorPrimary"
         android:ems="10"
-        android:fontFamily="@font/marianne_medium"
         android:hint="@string/plaintext_lastname"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -181,7 +176,6 @@
         android:autofillHints=""
         android:backgroundTint="?attr/colorPrimary"
         android:ems="10"
-        android:fontFamily="@font/marianne_medium"
         android:hint="@string/plaintext_firstname"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -211,7 +205,6 @@
             android:layout_weight="1"
             android:buttonTint="?attr/colorPrimary"
             android:checked="true"
-            android:fontFamily="@font/marianne_medium"
             android:text="@string/button_male" />
 
         <RadioButton
@@ -220,7 +213,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="?attr/colorPrimary"
-            android:fontFamily="@font/marianne_medium"
             android:text="@string/button_female" />
     </RadioGroup>
 

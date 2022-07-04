@@ -17,4 +17,7 @@
     <string name="plaintext_socialNumber">Numéro de sécurité social</string>
     <string name="textview_dptOfBirth">Département de naissance :</string>
     <string name="textview_cityOfBirth">Ville de naissance :</string>
+    <string name="textview_save_vote">Sauvegarder</string>
+    <string name="textview_select_vote">Sélectionnez votre choix</string>
+    <string name="textview_info_vote">Si vous souhaitez voter vous devez dans un premier temps vous enregistrer sur la page d\'inscription. Si vous êtes déja inscris vous pouvez poursuivre sur cette page et enregistrer votre vote.</string>
 </resources>
