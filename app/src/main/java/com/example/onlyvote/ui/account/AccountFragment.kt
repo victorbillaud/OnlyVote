@@ -18,6 +18,9 @@ import java.net.URL
 import org.json.JSONObject
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 /**
  * Account page class
@@ -91,12 +94,15 @@ class AccountFragment : Fragment() {
              */
             buttonRegister.setOnClickListener {
                 if (checkAllFields()) {
+                    val l = LocalDate.parse(buttonDate.text, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+                    val unix = l.atStartOfDay(ZoneId.systemDefault()).toInstant().epochSecond
+
                     val userInfo = JSONObject()
                         .put("firstname", editTextTextFirstName.text)
                         .put("lastname", editTextTextLastName.text)
-                        .put("gender", if (radioButtonMale.isChecked) "Homme" else "Femme")
-                        .put("birthDate", buttonDate.text)
-                        .put("birthDepartment", spinnerDptOfBirth.selectedItem.toString())
+                        .put("gender", if (radioButtonMale.isChecked) "homme" else "femme")
+                        .put("birthDate", unix)
+                        .put("birthDepartment", spinnerDptOfBirth.selectedItem)
                         .put("birthTown", spinnerCityOfBirth.selectedItem.toString())
                         .put("email", editTextTextEmailAddress.text)
                         .put("phoneNumber", editTextPhone.text)

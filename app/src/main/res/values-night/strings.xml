@@ -25,4 +25,7 @@
     <string name="button_send_code">Envoyer le code</string>
     <string name="text_view_info_send_code">Avant de valider votre vote nous avons besoin de vérifier votre identité, pour ce faire un code de vérification va être envoyé sur votre téléphone.</string>
     <string name="text_view_please_phone">Merci de reseigner le numéro de téléphone ci-dessous</string>
+    <string name="text_view_disclaimer">Attention votre vote est définitif</string>
+    <string name="button_validate">Valider mon vote</string>
+    <string name="edit_text_hint_code">Entrez le code reçu</string>
 </resources>

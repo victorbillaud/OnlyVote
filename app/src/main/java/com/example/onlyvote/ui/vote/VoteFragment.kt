@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.onlyvote.data.CandidateRequest
 import com.example.onlyvote.databinding.FragmentVoteBinding
@@ -13,7 +13,7 @@ import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-import android.widget.*
+
 
 /**
  * Vote page class
@@ -38,7 +38,10 @@ class VoteFragment : Fragment() {
 
         binding.apply {
             buttonSave.setOnClickListener {
-                activity?.startActivity(Intent(activity, SendMessageActivity::class.java))
+                val intent = Intent(activity, SendMessageActivity::class.java)
+                intent.putExtra("candidate", spinnerCandidateNames.selectedItem.toString())
+                intent.putExtra("idCandidate", spinnerIdCandidate.getItemAtPosition(spinnerCandidateNames.selectedItemPosition).toString())
+                startActivity(intent)
             }
         }
 
@@ -71,14 +74,20 @@ class VoteFragment : Fragment() {
         requireActivity().runOnUiThread {
             kotlin.run {
                 val names: ArrayList<String> = ArrayList()
+                val ids: ArrayList<Int> = ArrayList()
 
                 for (i in request.indices) {
                     names.add(request.get(i).firstname + " " + request.get(i).lastname)
+                    ids.add(request.get(i).id)
                 }
 
                 val adapter: ArrayAdapter<String> = ArrayAdapter(binding.root.context, android.R.layout.simple_list_item_1, names)
 
                 binding.spinnerCandidateNames.adapter = adapter
+
+                val adapterId: ArrayAdapter<Int> = ArrayAdapter(binding.root.context, android.R.layout.simple_list_item_1, ids)
+
+                binding.spinnerIdCandidate.adapter = adapterId
             }
         }
     }

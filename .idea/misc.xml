@@ -46,8 +46,10 @@
         <entry key="app/src/main/res/drawable/viewpager_item.xml" value="0.3365" />
         <entry key="app/src/main/res/font/font.xml" value="0.3807291666666667" />
         <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_check_code.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_display_message.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5233281493001555" />
+        <entry key="app/src/main/res/layout/activity_send_message.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/fragment_candidates.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />

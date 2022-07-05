@@ -17,10 +17,15 @@
         android:theme="@style/Theme.OnlyVote"
         tools:targetApi="31">
         <activity
+            android:name=".ui.vote.CheckCodeActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.vote.SendMessageActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
