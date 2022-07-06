@@ -3,16 +3,21 @@ package com.example.onlyvote.ui.vote
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.onlyvote.MainActivity
 import com.example.onlyvote.R
+import com.example.onlyvote.data.CodeRequest
+import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
+/**
+ * Check code class
+ */
 class CheckCodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,13 +43,18 @@ class CheckCodeActivity : AppCompatActivity() {
         val editTextCode: EditText = findViewById(R.id.editTextCode)
 
         checkButton.setOnClickListener {
-            Log.d("tag", "UWU" + intent.extras?.get("idCandidate").toString())
             checkCode(intent.extras?.get("phone").toString(), editTextCode.text.toString(), intent.extras?.get("idCandidate").toString()).start()
 
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
+    /**
+     * Check code with phone number and send candidate id to api
+     * @param phoneNumber
+     * @param code
+     * @param idCandidate
+     */
     private fun checkCode(phoneNumber: String, code: String, idCandidate: String) : Thread {
         return Thread {
             val url = URL("https://onlyvote.victorbillaud.fr/check  ")
@@ -60,9 +70,27 @@ class CheckCodeActivity : AppCompatActivity() {
 
             val inputSystem = connection.inputStream
             val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
+            val request: CodeRequest = Gson().fromJson(inputStreamReader, CodeRequest::class.java)
+
+            if (!request.result) {
+                userAlreadyVoted(request)
+            }
 
             inputStreamReader.close()
             inputSystem.close()
+        }
+    }
+
+    /**
+     * Notify the user and return home if user already voted
+     * @param request
+     */
+    private fun userAlreadyVoted(request: CodeRequest) {
+        this.runOnUiThread {
+            kotlin.run {
+                Toast.makeText(applicationContext, request.message, 1000).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }
     }
 }

@@ -144,24 +144,6 @@ class AccountFragment : Fragment() {
     }
 
     /**
-     * Fetch all the departements code from api
-     */
-    /* private fun fetchDptsData(): Thread  {
-        return Thread {
-            val url = URL("https://geo.api.gouv.fr/departements?fields=nom,code")
-            val connection = url.openConnection() as HttpURLConnection
-            val inputSystem = connection.inputStream
-            val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
-            val request: Array<DptsRequest> = Gson().fromJson(inputStreamReader, Array<DptsRequest>::class.java)
-
-            updateUiDpts(request)
-
-            inputStreamReader.close()
-            inputSystem.close()
-        }
-    } */
-
-    /**
      * Fetch all cities name depending on department code from api
      * @param code
      */
@@ -190,27 +172,6 @@ class AccountFragment : Fragment() {
             inputSystem.close()
         }
     }
-
-    /**
-     * Update the UI on fetching departments code
-     * @param request
-     */
-    /* private fun updateUiDpts(request: Array<DptsRequest>) {
-        requireActivity().runOnUiThread {
-            kotlin.run {
-                val spinner: Spinner = binding.spinnerDptOfBirth
-                val data: ArrayList<String> = ArrayList()
-
-                for (dpts in request) {
-                    data.add(dpts.code)
-                }
-
-                val adapter: ArrayAdapter<String> = ArrayAdapter(binding.root.context, android.R.layout.simple_list_item_1, data)
-
-                spinner.adapter = adapter
-            }
-        }
-    } */
 
     /**
      * Update the UI on fetching cities names

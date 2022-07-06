@@ -4,13 +4,13 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.onlyvote.MainActivity
 import com.example.onlyvote.R
+import com.example.onlyvote.data.CodeRequest
+import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
@@ -59,6 +59,10 @@ class SendMessageActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Send code with phone number to api
+     * @param phoneNumber
+     */
     private fun sendCode(phoneNumber: String) : Thread {
         return Thread {
             val url = URL("https://onlyvote.victorbillaud.fr/code")
@@ -72,9 +76,26 @@ class SendMessageActivity : AppCompatActivity() {
 
             val inputSystem = connection.inputStream
             val inputStreamReader = InputStreamReader(inputSystem, "UTF-8")
+            val request: CodeRequest = Gson().fromJson(inputStreamReader, CodeRequest::class.java)
+
+            if (!request.result) {
+                userAlreadyVoted(request)
+            }
 
             inputStreamReader.close()
             inputSystem.close()
+        }
+    }
+
+    /**
+     * Notify the user and return home if user already voted
+     */
+    private fun userAlreadyVoted(request: CodeRequest) {
+        this.runOnUiThread {
+            kotlin.run {
+                Toast.makeText(applicationContext, request.message, 1000).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }
     }
 }
