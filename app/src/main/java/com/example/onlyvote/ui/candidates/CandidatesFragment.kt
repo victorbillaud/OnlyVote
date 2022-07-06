@@ -83,6 +83,8 @@ class CandidatesFragment : Fragment() {
                     viewPagerItemArrayList.add(viewPagerItem)
                 }
 
+                viewPagerItemArrayList.shuffle()
+
                 val vpAdapter = VPAdapter(viewPagerItemArrayList)
 
                 binding.viewPager2.adapter = vpAdapter
